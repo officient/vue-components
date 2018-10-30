@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Officient vue-components</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <!-- add prefetch metadata found in webpack - this is exposed by html-webpack-plugin -->
+      <% for (var chunk of webpack.chunks) { %>
+        <% for (var file of chunk.files) { %>
+          <% if (file.match(/prefetch/)) { %>
+            <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+          <% } %>
+        <% } %>
+      <% } %>
+  </head>
+  <body>
+		<div id="app">
+
+		</div>
+  </body>
+</html>

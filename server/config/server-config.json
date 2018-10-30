@@ -1,0 +1,17 @@
+{
+  "csp": {
+    "defaultSrc": ["'self'"],
+    "scriptSrc": ["'self'"],
+    "connectSrc": ["'self'", "https://s3-eu-west-1.amazonaws.com", "https://sentry.io/"],
+    "styleSrc": ["'self'", "'unsafe-inline'"],
+    "fontSrc": ["'self'", "selfservicecdn.officient.io", "data:"],
+    "imgSrc": ["'self'", "data:", "blob:", "www.gravatar.com", "d1s4sisum1m692.cloudfront.net", "d2fx4aj2s2cbw4.cloudfront.net",
+    "https://d1hh00q69e7fc3.cloudfront.net", "d2bnc5oyeknkvl.cloudfront.net", "https://s3-eu-west-1.amazonaws.com",
+    "image.coolblue.io", "image.coolblue.nl"],
+    "childSrc": ["'self'"],
+    "workerSrc": ["'self'"],
+    "frameSrc": ["'none'"],
+    "frameAncestors": ["'none'"],
+    "objectSrc": ["'none'"]
+  }
+}
