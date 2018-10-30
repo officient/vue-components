@@ -23,3 +23,7 @@ Do not use styling in the single file components.
 
 This ensures that the CSS is loaded into the built file for production and not a separate file.
 
+## Updating
+
+Increment the version in package.json and create a release from the latest commit.  
+Releases can be created in the `releases` tab on top.
