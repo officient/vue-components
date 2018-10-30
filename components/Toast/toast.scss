@@ -1,0 +1,65 @@
+#toast {
+  z-index: 100000000000; // Because of auth0
+  position: fixed;
+  pointer-events:none;
+  top: 20px;
+  right: 50px;
+  left: 50px;
+	
+  .message {
+    pointer-events:all;
+   
+    max-width: 500px;
+    margin: auto;
+    box-sizing: border-box;
+    z-index: $z-message;
+    padding: 15px 20px;
+    border-radius: 3px;
+    background: #039BE5;
+    color: white;
+    border: 1px solid darken(#039BE5, 5%);
+
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    &.red {
+      background: $red-200;
+      border-color: darken($red-200, 5%);
+    }
+
+    &:last-child  {
+      margin-bottom: 0;
+    }
+
+    .title {
+      font-weight: $bold;
+    }
+
+    .description {
+      white-space: pre-line;
+    }
+
+    .mdi-close {
+      cursor: pointer;
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      transition: $tr-time $tr-ease;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    &:hover, &:focus {
+      .mdi-close {
+        background: black;
+        color: white;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
