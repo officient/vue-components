@@ -1,0 +1,15 @@
+{
+  "name": "officient-vue-components",
+  "version": "1.0.0",
+  "description": "Shared Vue components for Officient",
+  "main": "src",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0"
+  }
+}
