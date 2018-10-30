@@ -1,0 +1,191 @@
+#SignPage {
+    canvas {
+      border: 1px solid $gray-200;
+      background: #fafafa;
+    }
+  
+    label {
+      margin-top: 20px;
+    }
+  
+    .popup {
+      position: fixed;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,.5);
+      top: 0;
+      max-width: 100%;
+      height: 100%;
+      z-index: $z-popups;
+      .box {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -55%);
+        margin: 0;
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 20px;
+        background: $white;
+        border: 1px solid $blue-200;
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+      }
+  
+      .buttons {
+        text-align: center;
+      }
+    }
+  
+    .canvas {
+      position: relative;
+      margin: 10px 0 20px;
+      .line {
+        position: absolute;
+        top: 120px;
+        width: 100%;
+        border-bottom: 1px dashed #1c99fc;
+        pointer-events: none;
+      }
+  
+      .clear {
+        position: absolute;
+        top: 140px;
+        right: 10px;
+        padding: 10px;
+      }
+  
+      .placeholder {
+        font-size: 24px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: $gray-300;
+        pointer-events: none;
+      }
+    }
+  
+    .tabs {
+      background: none;
+      text-align: center;
+  
+      .tab {
+        padding: 10px 15px;
+  
+        i.mdi {
+          margin: 5px;
+        }
+  
+        &.active,
+        &:active {
+          color: $blue-200;
+        }
+  
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  
+  
+    .popup.done {
+      .box {
+  
+        .button.blue {
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+          z-index: 2;
+        }
+      }
+  
+      .done-filter {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, .5);
+      }
+    }
+  
+    .contract-done {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 0;
+      .file {
+        width: auto;
+        height: 24px;
+        * {
+          transform-origin: center;
+        }
+      }
+      .load {
+        animation: load 4s;
+        animation-fill-mode: forwards;
+      }
+      .done {
+        animation: done 4s;
+        animation-fill-mode: forwards;
+        transform-origin: 19px 26px;
+      }
+      .file-check {
+        fill: white;
+      }
+  
+      .file-loading {
+        fill: none;
+        stroke: white;
+        stroke-width: 3px;
+        stroke-dasharray: 49;
+        stroke-linecap: round;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  
+  @keyframes load {
+    0% {
+      stroke-dashoffset: 49;
+      opacity: 1;
+    }
+    45% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      stroke-dashhoffset: 0;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes done {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0);
+    }
+    55% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  @font-face {
+    font-family: 'phontphreaks_handwritingRg';
+    src: url('/fonts/phontphreaks_handwriting-webfont.woff2') format('woff2'), url('/fonts/phontphreaks_handwriting-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
