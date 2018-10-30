@@ -2,6 +2,8 @@
 
 Shared Vue components for Officient.  
 
+**NOTE** There is no production branch! To update, check the updating section.
+
 ## Installation
 
 `npm i --save github:Officient/vue-components#v1.0.0`  
