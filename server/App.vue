@@ -2,6 +2,7 @@
   <div id="app">
     <a class="mt-20px block" href="/">Index</a>
     <div class="page-container">
+      <portal-target name="modal"></portal-target>
       <RouterView />
     </div>
   </div>

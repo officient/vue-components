@@ -1,16 +1,18 @@
 <template>
-  <transition name="slide-fade">
-    <div v-if="show" class="modal-backdrop">
-      <div class="modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
-        <div class="modal-subwrapper">
-          <div class="modal-content">
-            <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
-            <slot/>
+  <portal to="modal">
+    <transition name="slide-fade">
+      <div v-if="show" class="modal-backdrop">
+        <div class="modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
+          <div class="modal-subwrapper">
+            <div class="modal-content">
+              <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
+              <slot/>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </portal>
 </template>
 
 <script>
@@ -67,7 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  @import "./Modal.scss";
-</style>

@@ -59,10 +59,11 @@
     "webpack": "4.12.2",
     "webpack-cli": "^3.0.3",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "portal-vue": "^1.4.0"
   },
   "engines": {
     "node": ">= 6.9.2 < 9",
     "npm": "6.4.1"
-  }
+  },
 }

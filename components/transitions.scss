@@ -1,0 +1,164 @@
+// slide fade
+.slide-fade-enter-active {
+    transition: all .1s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    pointer-events: none;
+  }
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  
+  // Fade
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
+  }
+  
+  .uploadbox-enter-active, .uploadbox-leave-active {
+    transition: opacity 2s
+  }
+  .uploadbox-enter, .uploadbox-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
+  }
+  
+  // bounce fade
+  .bounce-fade-enter-active {
+    animation: bounce-fade-in .5s;
+  }
+  .bounce-fade-leave-active {
+    animation: bounce-fade-out .5s;
+  }
+  @keyframes bounce-fade-in {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes bounce-fade-out {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .list-enter-active, .list-leave-active {
+    transition: all .2s ease-in-out;
+  }
+  .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .search-list-enter-active, .search-list-leave-active {
+    transition: all .1s ease-in-out;
+  }
+  .search-list-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  .search-list-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .notification-enter-active, .notification-leave-active {
+    transition: all .1s ease-in-out;
+  }
+  .notification-enter, .notification-leave-to {
+    opacity: 0;
+    transform: translateY(-50px) scale(0);
+  }
+  
+  
+  // slide fade
+  .note-enter-active {
+    transition: all .1s ease;
+  }
+  .note-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    pointer-events: none;
+  }
+  .note-enter, .note-leave-to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  
+  
+  /* Transitions - Based on Angular Material */
+  
+  $swift-ease-out-duration: .2s !default;
+  $swift-ease-out-timing-function: cubic-bezier(.25, .8, .25, 1) !default;
+  $swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function !default;
+  
+  $swift-ease-in-duration: .1s !default;
+  $swift-ease-in-timing-function: cubic-bezier(.55, 0, .55, .2) !default;
+  $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !default;
+  
+  $swift-ease-in-out-duration: .2s !default;
+  $swift-ease-in-out-timing-function: cubic-bezier(.35, 0, .25, 1) !default;
+  $swift-ease-in-out: all $swift-ease-in-out-duration $swift-ease-in-out-timing-function !default;
+  
+  // slide fade
+  .fade-enter-active {
+    transition: opacity 200ms ease-out;
+  }
+  .fade-leave-active {
+    transition: opacity 100ms ease-out;
+    pointer-events: none;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+  
+  
+  // fade-scale
+  .fade-scale-enter-active {
+    animation: fade-scale-enter 250ms;
+  }
+  
+  .fade-scale-leave-active {
+    animation: fade-scale-leave 250ms;
+  }
+  
+  @keyframes fade-scale-enter {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fade-scale-leave {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  
