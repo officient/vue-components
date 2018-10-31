@@ -1,3 +1,5 @@
+@import './../_vars';
+
 #toast {
   z-index: 100000000000; // Because of auth0
   position: fixed;
