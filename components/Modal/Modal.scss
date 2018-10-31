@@ -59,6 +59,18 @@
   }
 }
 
+.modal-preview-kill-box {
+  #contract .content {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
+  .box {
+    margin-bottom: 0;
+    border: none;
+  }
+}
+
 // the following should be in your global style sheet
 
 body.prevent-scroll {
