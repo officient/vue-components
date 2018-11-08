@@ -1,3 +1,4 @@
+@import "./scss/fonts.scss";
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -10,7 +11,7 @@
   body {
     margin: 0;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     background: #FAFAFA;
     background: linear-gradient(to top right, rgba(#9B63F8, 0.05), rgba(#809EFC, 0.05));
     overflow-y: scroll;
