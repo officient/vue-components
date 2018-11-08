@@ -73,7 +73,7 @@
                 name="6 2"
             />
             <AvatarImage
-                class="inline size-62"
+                class="inline size-96"
                 src="https://www.gravatar.com/avatar/ee1910239c24d8193dcf32bc6c7e?d=404"
                 name="9 6"
             />
