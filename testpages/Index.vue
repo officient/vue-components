@@ -7,18 +7,13 @@
 </template>
 
 <script>
-import routes from '../testserver/routes'
+import routes from './routes'
 
 export default {
-    data () {
-        return {
-            routes,
-        }
-    },
-    methods: {
-        init () {
-            
-        },
-    },
+	data() {
+		return {
+			routes,
+		}
+	},
 }
 </script>
