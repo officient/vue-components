@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import AvatarImage from '../../components/AvatarImage/AvatarImage.vue'
+import AvatarImage from '../../components/AvatarImage'
 
 export default {
     components: {

@@ -7,6 +7,7 @@
       :value="value"
     >
     <input
+      :id="id"
       ref="input"
       type="text"
       v-model="string"
@@ -42,6 +43,10 @@ export default {
     initDelimiter: {
       type: String,
       default: ''
+    },
+    id: {
+      type: String,
+      required: false,
     }
   },
   data () {

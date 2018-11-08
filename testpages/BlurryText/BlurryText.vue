@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import BlurryText from '../../components/BlurryText/BlurryText.vue'
+import BlurryText from '../../components/BlurryText'
 
 export default {
 	components: { BlurryText }

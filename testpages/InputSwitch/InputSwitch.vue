@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import InputSwitch from '../../components/InputSwitch/InputSwitch.vue'
+import InputSwitch from '../../components/InputSwitch'
 
 export default {
 	components: { InputSwitch },

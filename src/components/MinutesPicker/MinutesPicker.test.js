@@ -1,10 +1,10 @@
 import { shallow } from '@vue/test-utils'
-import MinutesPicker from '@/components/MinutesPicker/MinutesPicker.vue'
+import MinutesPicker from './MinutesPicker'
 
 function simulateKeydownEvent (element, code) {
   var event = document.createEvent('Event')
   event.keyCode = code
-  event.initEvent('keydown')
+  event.initEvent('keydown', false, true)
   element.dispatchEvent(event)
 }
 
@@ -32,16 +32,16 @@ describe('MinutesPicker.vue', () => {
 
     expect(wrapper.vm.string).toBe('00h00')
 
-    wrapper.vm.$options.methods.addMinutes.call(wrapper.vm, 30)
+    wrapper.vm.addMinutes(30)
     expect(wrapper.vm.string).toBe('00h30')
 
-    wrapper.vm.$options.methods.addHours.call(wrapper.vm, 50) // limited to 24h
+    wrapper.vm.addHours(50) // limited to 24h
     expect(wrapper.vm.string).toBe('23h30')
 
-    wrapper.vm.$options.methods.addHours.call(wrapper.vm, -100)
+    wrapper.vm.addHours(-100)
     expect(wrapper.vm.string).toBe('00h30')
 
-    wrapper.vm.$options.methods.addMinutes.call(wrapper.vm, -100)
+    wrapper.vm.addMinutes(-100)
     expect(wrapper.vm.string).toBe('00h00')
   })
 
@@ -69,28 +69,5 @@ describe('MinutesPicker.vue', () => {
 
     simulateKeydownEvent(element, 37) // left
     expect(wrapper.vm.focus).toBe('hours')
-  })
-
-  it('sets 11:00 correctly when clearing input first', () => {
-    const wrapper = shallow(MinutesPicker, {
-      propsData: {
-        value: 90,
-        type: '24h'
-      }
-    })
-
-    wrapper.vm.string = '1'
-    wrapper.vm.keyup({ keyCode: -1 })
-    expect(wrapper.emitted().input[0]).toEqual([60])
-    wrapper.setProps({ value: 60 })
-
-    wrapper.vm.string = '11'
-    wrapper.vm.keyup({ keyCode: -1 })
-    expect(wrapper.emitted().input[1]).toEqual([660])
-    wrapper.setProps({ value: 660 })
-
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.string).toBe('11:00')
-    })
   })
 })
