@@ -1,6 +1,6 @@
 {
   "name": "officient-vue-components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Shared Vue components for Officient",
   "main": "index.js",
   "scripts": {
