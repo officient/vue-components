@@ -1,10 +1,10 @@
 
-import AvatarImage from '../pages/AvatarImage/AvatarImage.vue'
-import Modal from '../pages/Modal/Modal.vue'
-import MinutesPicker from '../pages/MinutesPicker/MinutesPicker.vue'
-import BlurryText from '../pages/BlurryText/BlurryText.vue'
-import InputSwitch from '../pages/InputSwitch/InputSwitch.vue'
-import Index from '../pages/Index.vue'
+import AvatarImage from '../testpages/AvatarImage/AvatarImage.vue'
+import Modal from '../testpages/Modal/Modal.vue'
+import MinutesPicker from '../testpages/MinutesPicker/MinutesPicker.vue'
+import BlurryText from '../testpages/BlurryText/BlurryText.vue'
+import InputSwitch from '../testpages/InputSwitch/InputSwitch.vue'
+import Index from '../testpages/Index.vue'
 
 export default [
     {
