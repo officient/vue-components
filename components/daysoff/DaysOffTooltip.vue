@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import Tooltip from 'components/Tooltip'
-import { floatable } from 'plugins/filters'
+import Tooltip from '../Tooltip/Tooltip'
+import { floatable } from '../../plugins/filters'
 
 export default {
   name: 'DaysOffTooltip',

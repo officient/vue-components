@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import DaysOffTooltip from 'components/daysoff/DaysOffTooltip'
-import { floatable, minutesToHoursMinutes } from 'plugins/filters'
+import DaysOffTooltip from './DaysOffTooltip'
+import { floatable, minutesToHoursMinutes } from '../../plugins/filters'
 
 export default {
   name: 'DaysOffTime',
