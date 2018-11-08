@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import MinutesPicker from './MinutesPicker'
+import MinutesPicker from '../../components/MinutesPicker/MinutesPicker.vue'
 
 export default {
     components: { MinutesPicker },

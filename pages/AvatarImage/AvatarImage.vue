@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import AvatarImage from './AvatarImage.vue'
+import AvatarImage from '../../components/AvatarImage/AvatarImage.vue'
 
 export default {
     components: {
