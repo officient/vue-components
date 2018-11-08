@@ -100,8 +100,5 @@ export default {
 			name: 'n y',
 		}
 	},
-	methods: {
-		init() {},
-	},
 }
 </script>
