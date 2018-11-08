@@ -1,6 +1,8 @@
 @import './../_vars';
 
 .AvatarImage {
+  font-size: 0;
+
   img {
     display: inline-block;
     vertical-align: middle;
@@ -8,15 +10,17 @@
     border-radius: 100%;
   }
   span {
-    display: block;
+    display: inline-block;
     vertical-align: middle;
     text-align: center;
     display: none;
+    font-size: $size-regular;
     font-weight: $bold;
     border-radius: 100%;
     text-transform: uppercase;
     color: $white;
-    color: rgba(255, 255, 255, .9);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   &.fallback {
@@ -42,10 +46,12 @@
     &, img, span {
       width: 16px;
       height: 16px;
+      line-height: 16px;
     }
     span {
-      line-height: 18px;
+      line-height: 6px;
       font-size: 8px;
+      padding: 5px 0 5px;
     }
   }
 
@@ -57,7 +63,6 @@
     span {
       line-height: 25px;
       font-size: 11px;
-      padding: 1px;
     }
   }
 
@@ -89,6 +94,18 @@
     }
     span {
       line-height: 48px;
+    }
+  }
+
+  &.size-62 {
+    &, img, span {
+      height: 62px;
+      width: 62px;
+    }
+    span {
+      font-size: 22px;
+      line-height: 62px;
+      font-weight: $bold;
     }
   }
 
