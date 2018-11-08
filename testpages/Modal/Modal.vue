@@ -5,7 +5,9 @@
 		<Modal :show="show" @close="show = false" width="400">
 				<div style="padding: 20px;">
 				<h1>Hello, I'm a Modal!</h1>
-				<p>By default I freeze your background.</br> Click and scroll around to test my behaviour.</br> If you have ideas to prettify me, please tell Giupetto..</p>
+				<p>By default I freeze your background.<br> 
+				Click and scroll around to test my behaviour.<br> 
+				If you have ideas to prettify me, please tell Giupetto..</p>
 				</div>
 		</Modal>
 	</div>
