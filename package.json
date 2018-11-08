@@ -4,7 +4,7 @@
   "description": "Shared Vue components for Officient",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --hot --config server/config/webpack.hmr.config.js",
+    "dev": "webpack-dev-server --progress --hot --config testserver/config/webpack.hmr.config.js",
     "unit": "jest",
     "test": "npm run lint && jest",
     "test:coverage": "jest --coverage",

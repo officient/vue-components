@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import routes from '../server/routes'
+import routes from '../testserver/routes'
 
 export default {
     data () {

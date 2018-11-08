@@ -1,15 +1,16 @@
 <template>
   <div
     class="AvatarImage"
-    :class="{ fallback: hasError }">
+    :class="{ fallback: hasError || forceInitials }">
     <img
-      v-if="hasError === false"
+      v-if="hasError === false && !forceInitials"
       v-show="loaded"
       :src="src"
       @error="imgError"
-      @load="imgLoaded">
+      @load="imgLoaded"
+    />
     <span
-      v-if="hasError === true"
+      v-if="hasError === true || forceInitials"
       :style="{ backgroundColor }">{{ text }}</span>
   </div>
 </template>
@@ -29,7 +30,11 @@ export default {
     'name': {
       type: String,
       default: ''
-    }
+    },
+    'forceInitials': {
+      type: Boolean,
+      default: false,
+    },
   },
   data () {
     return {
