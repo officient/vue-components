@@ -15,6 +15,7 @@
 
 <script>
 import '../Tooltip/Tooltip.scss'
+import { enagementToHoursMinutes, daysOffPartOfDay } from '../../utils/filters'
 
 export default {
   name: 'CalendarTooltipitem',
@@ -28,6 +29,7 @@ export default {
       default: ''
     }
   },
+  filters: { enagementToHoursMinutes, daysOffPartOfDay },
   computed: {
     itemStyles () {
       return {

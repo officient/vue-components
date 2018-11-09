@@ -1,6 +1,6 @@
 import moment from 'moment'
-import { dayOffEducationColor, dayOffSickDayColor, calendarGray } from 'utils/colors'
-import groupBy from 'utils/data/groupBy'
+import { dayOffEducationColor, dayOffSickDayColor, calendarGray } from '../colors'
+import groupBy from '../data/groupBy'
 const clone = (obj) => Object.assign({}, obj)
 
 /**
