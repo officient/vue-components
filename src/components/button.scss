@@ -1,0 +1,341 @@
+body.disable-buttons .button {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.button {
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+
+  display: inline-block;
+  transition: 100ms color ease-out, 100ms background ease-out, 100ms border ease-out;
+  border-radius: 4px;
+
+  background: #f8f8f8;
+  color: rgba(0, 0, 0, .95);
+  font-weight: $medium;
+  line-height: 26px;
+  font-size: 14px;
+  padding: 5px 30px;
+  border: 1px solid #c6c6c6;
+  outline: none;
+
+  &.basic {
+    border: none;
+    background: transparent;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.7;
+  }
+
+  &:hover {
+    background: lighten(#F8F8F8, 3%);
+  }
+  &:active {
+    background: darken(#F8F8F8, 3%);
+  }
+
+
+  &.white {
+    background: $white;
+    border-color: #A8C6E1;
+    color: rgba(0,0,0,.87);
+
+    i.mdi {
+      color: #A8C6E1;
+    }
+
+    &:hover {
+      background: white;
+    }
+    &:active {
+      background: white;
+    }
+  }
+
+  &.blue:not(.basic) {
+    background: $blue-200;
+    color: rgba(255,255,255,.95);
+    border-color: lighten($blue-200, 10%);
+
+    &:hover {
+      background: lighten($blue-200, 3%);
+    }
+    &:active {
+      background: darken($blue-200, 3%);
+    }
+  }
+  &.blue.basic {
+    background: rgba($blue-200, 0.02);
+    color: $blue-200;
+    border: 1px solid $blue-200;
+
+    &:hover {
+      background: rgba($blue-200, 0.05);
+      color: darken($blue-200, 5%);
+    }
+    &:active {
+      background: rgba($blue-200, 0.1);
+      color: darken($blue-200, 10%);
+    }
+  }
+
+  &.pink {
+    background: #E91E63;
+    color: rgba(255,255,255,.95);
+    border-color: lighten(#E91E63, 10%);
+
+    &:hover {
+      background: lighten(#E91E63, 3%);
+    }
+    &:active {
+      background: darken(#E91E63, 3%);
+    }
+  }
+
+  &.red {
+    background: $red-200;
+    color: rgba(255,255,255,.95);
+    border-color: lighten($red-200, 10%);
+
+    &:hover {
+      background: lighten($red-200, 3%);
+    }
+    &:active {
+      background: darken($red-200, 3%);
+    }
+  }
+
+  &.warning {
+    $warning: #fcdb71;
+    background: $warning;
+    color: #896b0c;
+    border-color: lighten($warning, 10%);
+
+    &:hover {
+      background: lighten($warning, 3%);
+    }
+    &:active {
+      background: darken($warning, 3%);
+    }
+  }
+
+  &.green {
+    background: $green-200;
+    color: rgba(255,255,255,.95);
+    border-color: lighten($green-200, 10%);
+
+    &:hover {
+      background: lighten($green-200, 3%);
+    }
+    &:active {
+      background: darken($green-200, 3%);
+    }
+  }
+
+  &.google {
+    background: #4285f4;
+    color: rgba(255,255,255,.95);
+    border-color: lighten(#4285f4, 10%);
+
+    &:hover {
+      background: lighten(#4285f4, 3%);
+    }
+    &:active {
+      background: darken(#4285f4, 3%);
+    }
+  }
+
+  $email-color: #037ebc;
+  &.email {
+    background: $email-color;
+    color: rgba(255,255,255,.95);
+    border-color: lighten($email-color, 10%);
+    i.mdi {
+      font-size: 16px;
+      background: white !important;
+      color: $email-color !important;
+    }
+
+    &:hover {
+      background: lighten($email-color, 3%);
+      i.mdi {
+        color: lighten($email-color, 3%) !important;
+      }
+    }
+    &:active {
+      background: darken($email-color, 3%);
+      i.mdi {
+        color: darken($email-color, 3%) !important;
+      }
+    }
+  }
+
+  &.microsoft {
+    background: #00a1f1;
+    color: rgba(255,255,255,.95);
+    border-color: lighten(#00a1f1, 10%);
+
+    &:hover {
+      background: lighten(#00a1f1, 3%);
+    }
+    &:active {
+      background: darken(#00a1f1, 3%);
+    }
+  }
+
+  span + i.mdi {
+    margin-left: 5px;
+  }
+
+  i.mdi + span {
+    margin-left: 5px;
+  }
+
+  &.icon {
+    padding: 0;
+
+    &.left.floated {
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      i.mdi, .googleIcon {
+        box-sizing: border-box;
+        float: left;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+
+      .googleIcon {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        background: white;
+        border-radius: 3px;
+      }
+
+      span {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  &.big {
+    padding: 10px 20px;
+
+    &.icon {
+      padding: 0;
+      line-height: 40px;
+
+      i.mdi, .googleIcon {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+      }
+
+      .googleIcon {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.buttons {
+  &.center.aligned {
+    text-align: center;
+  }
+  .button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .dropdown + .dropdown,
+  .link + .button,
+  .link + .dropdown {
+    margin-left: 15px;
+  }
+
+  &.vertical {
+    .button {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  &.small {
+    margin-top: 2px;
+    .button {
+      font-size: 12px;
+      line-height: 27px;
+      padding: 0 15px;
+      i.mdi {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.buttons.fixed-bottom {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+
+  .button {
+    pointer-events: all;
+  }
+
+  @media only screen and (max-width: 600px) {
+    position:fixed;
+    bottom: 0;
+    left:0;
+    right:0;
+    width:100%;
+    text-align: center;
+
+    &:after {
+      content: "";
+      clear: both;
+    }
+
+    .button {
+      margin: 0;
+      border-radius: 0;
+      float: left;
+      padding-left: 0;
+      padding-right: 0;
+
+      &.s-25 {
+        width: 25%;
+      }
+
+      &.s-50 {
+        width: 50%;
+      }
+
+      &.s-75 {
+        width: 75%;
+      }
+
+      &.s-100 {
+        width: 100%;
+      }
+    }
+  }
+}
