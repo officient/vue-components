@@ -4,6 +4,9 @@ module.exports = {
     "<rootDir>/tests",
     "<rootDir>/src"
   ],
+  "moduleNameMapper": {
+    "^.+\\.(css|scss)$": "<rootDir>src/tests/stubJestCSS.js"
+  },
   "moduleFileExtensions": [
     "js",
     "vue"
