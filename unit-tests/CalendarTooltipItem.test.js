@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils'
-import CalendarTooltipItem from '../components/daysoff/CalendarTooltipItem'
+import CalendarTooltipItem from '../src/components/daysoff/CalendarTooltipItem'
 import i18n_nl from './i18n/nl.json'
 
 const mocks = {
