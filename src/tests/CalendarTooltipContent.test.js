@@ -37,7 +37,7 @@ describe('CalendarTooltipContent.vue', () => {
       company_days_off: [
         {
           date: '2018-01-01',
-          special_name: 'new year'
+          special_name: 'NEW_YEARS_DAY'
         }
       ],
     })
@@ -49,7 +49,7 @@ describe('CalendarTooltipContent.vue', () => {
     } })
 
     expect(wrapper.find('.calendar-tooltip-title').text()).toBe('Official holiday')
-    expect(wrapper.find('.calendar-tooltip-item-name').text()).toBe('new year')
+    expect(wrapper.find('.calendar-tooltip-item-name').text()).toBe('New Year\'s day')
   })
 
   it('renders multiple personal days off', () => {

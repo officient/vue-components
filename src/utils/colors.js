@@ -15,3 +15,4 @@ export const calendarColors = [
 export const calendarGray = '#BBBBBB'
 export const dayOffEducationColor = '#f5be27'
 export const dayOffSickDayColor = '#d40000'
+export const companyHolidayColor = '#692192'
