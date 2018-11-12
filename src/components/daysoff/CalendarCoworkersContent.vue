@@ -22,7 +22,7 @@
 
 <script>
 import '../../scss/Tooltip.scss'
-import Tooltip from '../Tooltip/Tooltip'
+import Tooltip from '../Tooltip'
 import CalendarTooltipItem from './CalendarTooltipItem'
 
 export default {

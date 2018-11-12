@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import Tooltip from '../Tooltip/Tooltip'
+import Tooltip from '../Tooltip'
 import { floatable } from '../../../lib/utils/filters'
 
 export default {
