@@ -17,8 +17,8 @@
 
 <script>
 import { mixin as clickaway } from 'vue-clickaway'
-import { freezeBackground, unfreezeBackground } from '../../../lib/utils/modals'
-import './Modal.scss'
+import { freezeBackground, unfreezeBackground } from '../../lib/utils/modals'
+import '../scss/Modal.scss'
 
 export default {
   name: 'Modal',

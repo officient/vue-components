@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import avatarColors from './avatar-colors'
-import './AvatarImage.scss'
+import avatarColors from '../../lib/utils/avatar-colors'
+import '../scss/AvatarImage.scss'
 
 const errorsList = []
 export default {

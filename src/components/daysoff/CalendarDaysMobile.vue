@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import '../Tooltip/Tooltip.scss'
+import '../../scss/Tooltip.scss'
 import Tooltip from '../Tooltip/Tooltip'
 import CalendarTooltipContent from './CalendarTooltipContent'
 

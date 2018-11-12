@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import '../Tooltip/Tooltip.scss'
+import '../../scss/Tooltip.scss'
 import { enagementToHoursMinutes, daysOffPartOfDay } from '../../../lib/utils/filters'
 
 export default {

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import './InputSwitch.scss'
+import '../scss/InputSwitch.scss'
 
 export default {
   name: 'InputSwitch',
@@ -78,7 +78,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  @import "./InputSwitch.scss";
-</style>

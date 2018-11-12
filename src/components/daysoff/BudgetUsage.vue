@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import DaysOffTooltip from 'components/daysoff/DaysOffTooltip'
+import DaysOffTooltip from './DaysOffTooltip'
 
 export default {
   name: 'BudgetUsage',
