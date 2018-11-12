@@ -1,0 +1,10 @@
+{
+  "hello": "world",
+  "DAYS_OFF": "Days off",
+  "COMPANY_DAY_OFF": "Official holiday",
+  "WORKING_TIME": "Working time",
+  "DAYS_OFF_PENDING_APPROVAL": "Days off pending approval",
+  "Sick day": "Sick day",
+  "NEW_YEARS_DAY": "New Year's day",
+  "ZERO_SCHEDULE_DAY": "Free day"
+}

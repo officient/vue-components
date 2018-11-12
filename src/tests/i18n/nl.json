@@ -1,0 +1,10 @@
+{
+  "hello": "world",
+  "DAYS_OFF": "Verlof",
+  "COMPANY_DAY_OFF": "Officiële feestdag",
+  "WORKING_TIME": "Werkuren",
+  "DAYS_OFF_PENDING_APPROVAL": "Verlofaanvragen wachtend op goedkeuring",
+  "Sick day": "Ziekte",
+  "NEW_YEARS_DAY": "Nieuwjaarsdag",
+  "ZERO_SCHEDULE_DAY": "Vrije dag"
+}
