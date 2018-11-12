@@ -2,10 +2,9 @@ module.exports = {
   "testURL": "http://localhost:7357/jest/unit",
   "roots": [
     "<rootDir>/tests",
-    "<rootDir>/src"
   ],
   "moduleNameMapper": {
-    "^.+\\.(css|scss)$": "<rootDir>src/tests/stubJestCSS.js"
+    "^.+\\.(css|scss)$": "<rootDir>tests/stubJestCSS.js"
   },
   "moduleFileExtensions": [
     "js",
