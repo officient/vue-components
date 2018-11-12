@@ -42,10 +42,12 @@
 <script>
 import '../Tooltip/Tooltip.scss'
 import CalendarTooltipItem from './CalendarTooltipItem'
+import { minutesToHoursMinutes } from '../../utils/filters'
 
 export default {
   name: 'CalendarTooltipContent',
   components: { CalendarTooltipItem },
+  filters: { minutesToHoursMinutes },
   props: {
     dateStr: String,
     weeklySchedule: {
