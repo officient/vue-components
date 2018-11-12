@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import AvatarImage from '../../components/AvatarImage'
+import AvatarImage from '../../lib/components/AvatarImage'
 
 export default {
     components: {
