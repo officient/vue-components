@@ -2,34 +2,36 @@
 
 Shared Vue components for Officient.
 
-**NOTE** There is no production branch! To update, check the updating section.
-
 ## Installation
 
 `npm i --save github:Officient/vue-components#v1.0.0`  
 Replace v1.0.0 with the current version.
 
+## Usage
+
+```
+// Importing a component:
+import AvatarImage from 'officient-vue-components/lib/components/AvatarImage.vue'
+
+// importing utils
+import daysOffTransformer from officient-vue-components/lib/utils/transformers/daysOff
+```
+
 ## Development
 
-To add a component, add it to the `/src` folder with all the utils, vue files and tests required.
-To allow it to be used externally, you need to also add it to the `/components` folder and require
-the index file in the `/src` folder.
+Component and utils source code goes into `/src`.
+To allow it to be used externally, you need to also add it to the `/lib` folder.
 
-You should add an example of usage in `/testpages`
-
-### Using a component
-
-You can use a component by requiring `officient-vue-components` followed by the path of the component.  
-E.g. `import AvatarImage from 'officient-vue-components/components/AvatarImage'`
+- examples of usage: `/testpages`
+- unit tests: `/unittests`
+- lib usage to be imported: `/lib`
+- source code: `/src`
 
 ### SCSS
 
-Make sure to always include the CSS in the JavaScript using import.  
-Do not use styling in the single file components.
+Import the CSS in your Vue file in the script section.
 
-This ensures that the CSS is loaded into the built file for production and not a separate file.
-
-## Updating
+### Release
 
 Increment the version in package.json and create a release from the latest commit.  
 Releases can be created in the `releases` tab on top.
