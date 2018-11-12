@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import MinutesPicker from '../../lib/components/MinutesPicker'
+import MinutesPicker from '../../../lib/components/MinutesPicker'
 
 export default {
     components: { MinutesPicker },

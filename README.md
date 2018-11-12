@@ -22,10 +22,10 @@ import daysOffTransformer from officient-vue-components/lib/utils/transformers/d
 Component and utils source code goes into `/src`.
 To allow it to be used externally, you need to also add it to the `/lib` folder.
 
-- examples of usage: `/testpages`
-- unit tests: `/unittests`
-- lib usage to be imported: `/lib`
-- source code: `/src`
+- `/src`: source code: 
+- `/lib`: public library for usage by other repo's
+- `/dev/pages`: examples of usage for our components
+- `/tests`: unit tests
 
 ### SCSS
 

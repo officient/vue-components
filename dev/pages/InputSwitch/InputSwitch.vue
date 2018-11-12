@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import InputSwitch from '../../lib/components/InputSwitch'
+import InputSwitch from '../../../lib/components/InputSwitch'
 
 export default {
 	components: { InputSwitch },

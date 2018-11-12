@@ -9,7 +9,7 @@ if (!window.Promise) {
 import Vue from 'vue'
 import App from './App.vue'
 import { plugin, initRouter } from './plugins/router'
-import routes from '../testpages/routes'
+import routes from '../pages/routes'
 import PortalVue from 'portal-vue'
 
 Vue.use(PortalVue)

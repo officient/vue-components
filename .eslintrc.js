@@ -13,7 +13,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: 'testserver/config/webpack.hmr.config.js'
+        config: 'dev/server/config/webpack.hmr.config.js'
       }
     }
   },

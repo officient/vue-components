@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import BlurryText from '../../lib/components/BlurryText'
+import BlurryText from '../../../lib/components/BlurryText'
 
 export default {
 	components: { BlurryText }
