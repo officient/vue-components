@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { shallow } from '@vue/test-utils'
-import AvatarImage from '../src/components/AvatarImage/AvatarImage'
+import AvatarImage from '../src/components/AvatarImage'
 
 const sleep = (scs = 0) => new Promise((resolve, reject) => setTimeout(() => resolve(), scs))
 

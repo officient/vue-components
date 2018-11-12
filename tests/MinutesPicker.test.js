@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils'
-import MinutesPicker from '../src/components/MinutesPicker/MinutesPicker'
+import MinutesPicker from '../src/components/MinutesPicker'
 
 function simulateKeydownEvent (element, code) {
   var event = document.createEvent('Event')
