@@ -17,7 +17,6 @@ module.exports = merge(baseConfig, {
     port: 8085,
     disableHostCheck: true,
     historyApiFallback: true,
-    noInfo: true,
     overlay: true,
     contentBase: path.join(__dirname, '../html'),
 
