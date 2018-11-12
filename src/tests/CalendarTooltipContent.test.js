@@ -1,8 +1,8 @@
 import { shallow, mount } from '@vue/test-utils'
 import CalendarTooltipContent from '../components/daysoff/CalendarTooltipContent'
 import { transformDaysOffToCalendar } from '../utils/transformers/daysOff'
-import i18n_nl from '../i18n/nl.json'
-import i18n_en from '../i18n/en.json'
+import i18n_nl from './i18n/nl.json'
+import i18n_en from './i18n/en.json'
 
 const mocks = {
   $t: v => i18n_en[v]
