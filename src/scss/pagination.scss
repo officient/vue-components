@@ -1,0 +1,40 @@
+$pagination-height: 30px;
+
+.pagination {
+  color: rgba(0, 0, 0, 0.6);
+  user-select: none;
+
+  .arrow {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 30px;
+    height: $pagination-height;
+    line-height: $pagination-height;
+    text-align: center;
+
+    i {
+      font-size: 20px;
+      line-height: $pagination-height;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &.disabled {
+      pointer-events: none;
+      color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    height: $pagination-height;
+    line-height: $pagination-height;
+    font-size: 14px;
+    margin: 0 20px;
+  }
+}
