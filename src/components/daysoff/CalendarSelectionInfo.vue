@@ -20,7 +20,7 @@
 
 <script>
 import moment from 'moment'
-import CalendarTooltipContentMobile from 'components/daysoff/CalendarTooltipContentMobile'
+import CalendarTooltipContentMobile from './CalendarTooltipContentMobile'
 
 export default {
     name: 'CalendarSelectionInfo',
