@@ -36,10 +36,10 @@ export default {
   },
   computed: {
     limitedList () {
-      return this.list.slice(0, 2)
+      return this.list.slice(0, 1)
     },
     moreList () {
-      return this.list.slice(2)
+      return this.list.slice(1)
     }
   }
 }
