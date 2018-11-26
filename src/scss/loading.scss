@@ -1,0 +1,51 @@
+.spinner{
+  fill-opacity: 1;
+  animation: rotator 2s ease-in-out infinite
+}
+
+.spinner .back,.spinner .front{
+  fill: #0093ED;
+  animation: colors 2s ease-in-out infinite
+}
+
+.spinner .back{
+  opacity: .2
+}
+
+.spinner.supercenter{
+  position: fixed;
+  z-index: 111111;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes colors {
+  0%,100% {
+    fill: #4285F4
+  }
+
+  25% {
+    fill: #DE3E35
+  }
+
+  50% {
+    fill: #F7C223
+  }
+
+  75% {
+    fill: #1B9A59
+  }
+}
