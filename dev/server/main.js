@@ -11,8 +11,15 @@ import App from './App.vue'
 import { plugin, initRouter } from './plugins/router'
 import routes from '../pages/routes'
 import PortalVue from 'portal-vue'
+import VueI18n from 'vue-i18n'
+import i18n from '../i18n'
+import VueLocal from './plugins/local/_plugin'
 
 Vue.use(PortalVue)
+
+Vue.use(VueI18n)
+Vue.use(i18n)
+Vue.use(VueLocal)
 
 Vue.use(plugin)
 initRouter(routes)
