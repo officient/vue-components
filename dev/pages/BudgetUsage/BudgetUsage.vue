@@ -1,11 +1,5 @@
 <template>
-    <div style="
-        padding: 15px;
-        background: white;
-        border: 1px #CBDDEC solid;
-        width: 300px;
-        margin: 15px;
-    ">
+    <div class="budget-usage-container">
         <BudgetUsage :item="item"/>
     </div>
     
