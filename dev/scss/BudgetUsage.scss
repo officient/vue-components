@@ -1,0 +1,30 @@
+@import './_vars';
+
+.progress-budget {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-align: right;
+    user-select: none;
+    height: 20px;
+    line-height: 20px;
+    background: #efefef;
+    position: relative;
+    width: 100%;
+
+    .bar {
+        background: $blue-200;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        max-width: 100%;
+        transition: 200ms ease-in-out;
+
+        &.pending {
+        opacity: .5;
+        }
+    }
+}
+
+  

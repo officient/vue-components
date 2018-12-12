@@ -3,6 +3,7 @@ import Modal from './Modal/Modal.vue'
 import MinutesPicker from './MinutesPicker/MinutesPicker.vue'
 import BlurryText from './BlurryText/BlurryText.vue'
 import InputSwitch from './InputSwitch/InputSwitch.vue'
+import BudgetUsage from './BudgetUsage/BudgetUsage.vue'
 import Index from './Index.vue'
 
 export default [
@@ -25,6 +26,10 @@ export default [
 	{
 		path: '/InputSwitch',
 		component: InputSwitch,
+	},
+	{
+		path: '/BudgetUsage',
+		component: BudgetUsage,
 	},
 	{
 		path: '/*',
