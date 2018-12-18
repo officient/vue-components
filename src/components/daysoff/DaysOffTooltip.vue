@@ -60,7 +60,7 @@
 
 <script>
 import Tooltip from '../Tooltip'
-import { floatable } from '../../../lib/utils/filters'
+import { floatable } from '../../utils/filters'
 
 export default {
   name: 'DaysOffTooltip',

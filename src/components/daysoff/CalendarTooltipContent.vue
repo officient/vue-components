@@ -42,7 +42,7 @@
 <script>
 import '../../scss/Tooltip.scss'
 import CalendarTooltipItem from './CalendarTooltipItem'
-import { minutesToHoursMinutes } from '../../../lib/utils/filters'
+import { minutesToHoursMinutes } from '../../utils/filters'
 
 export default {
   name: 'CalendarTooltipContent',

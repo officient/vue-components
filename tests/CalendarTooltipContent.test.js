@@ -1,6 +1,6 @@
 import { shallow, mount } from '@vue/test-utils'
 import CalendarTooltipContent from '../src/components/daysoff/CalendarTooltipContent'
-import { transformDaysOffToCalendar } from '../lib/utils/transformers/daysOff'
+import { transformDaysOffToCalendar } from '../src/utils/transformers/daysOff'
 import i18n_nl from './i18n/nl.json'
 import i18n_en from './i18n/en.json'
 
