@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import './icomoon.scss'
 import routes from './routes'
 
 export default {
