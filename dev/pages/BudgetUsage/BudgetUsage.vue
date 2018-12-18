@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import '../../scss/BudgetUsage.scss'
 import BudgetUsage from '../../../lib/components/daysoff/BudgetUsage'
 
 export default {
