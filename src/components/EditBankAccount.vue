@@ -107,7 +107,7 @@
  <script>
 export default {
   name: 'EditBankAccount',
-  props: ['employee', 'nationality_country_code'],
+  props: ['sync_integration', 'bank_account_iban', 'nationality_country_code'],
   data () {
     return {
       availableBankTypes: [],
@@ -147,7 +147,7 @@ export default {
     }
   },
   beforeMount() {
-    if(this.employee.sync_integration === null) {
+    if(this.sync_integration === null) {
       this.availableBankTypes = Object.keys(this.banks)
     } else {
       this.availableBankTypes = [ "IBAN" ]
@@ -156,7 +156,7 @@ export default {
       this.bankType = this.availableBankTypes[0]
     }
     try {
-      const bankAccount = JSON.parse(this.employee.bank_account_iban)
+      const bankAccount = JSON.parse(this.bank_account_iban)
       if(bankAccount.iban) {
         this.banks.IBAN = bankAccount
         this.bankType = "IBAN"
