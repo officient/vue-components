@@ -3,6 +3,7 @@ import Modal from './Modal/Modal.vue'
 import MinutesPicker from './MinutesPicker/MinutesPicker.vue'
 import BlurryText from './BlurryText/BlurryText.vue'
 import InputSwitch from './InputSwitch/InputSwitch.vue'
+import Pagination from './Pagination/Pagination.vue'
 import InputDate from './InputDate/InputDate.vue'
 import BudgetUsage from './BudgetUsage/BudgetUsage.vue'
 import Loading from './Loading/Loading.vue'
@@ -31,6 +32,9 @@ export default [
 		component: InputSwitch,
 	},
 	{
+		path: '/Pagination',
+		component: Pagination,
+  },
 		path: '/InputDate',
 		component: InputDate
   },
