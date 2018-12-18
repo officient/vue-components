@@ -1,0 +1,143 @@
+@import './_vars';
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  .menu {
+    display: block;
+    position: absolute;
+    min-width: 200px;
+    width: max-content;
+    top: 100%;
+    left: 0;
+    right: auto;
+    background: #fff;
+    box-shadow: -1px 2px 8px 0 rgba(34, 36, 38, 0.15);
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: 3px;
+    z-index: $z-popups;
+    transition: opacity .1s ease;
+    will-change: transform,opacity;
+    margin-top: 5px;
+    max-height: calc(100vh - 230px);
+    overflow-y: auto;
+
+    &.left {
+      right: 0;
+      left: auto;
+    }
+
+    &.wider {
+       min-width: 300px;
+    }
+
+    &.taller {
+      max-height: 500px;
+    }
+
+    > * {
+      white-space: nowrap;
+    }
+
+    > .item {
+      position: relative;
+      cursor: pointer;
+      font-size:13px;
+      display: block;
+      border: none;
+      height: auto;
+      text-align: left;
+      border-top: none;
+      line-height: 1em;
+      color: rgba(0,0,0,.87);
+      padding: 15px 20px;
+      box-shadow: none;
+      -webkit-touch-callout: none;
+      text-decoration: none;
+      font-weight: 400;
+
+      .description {
+        color: rgba(0,0,0,.7);
+        font-weight: $regular;
+        margin-top: 5px;
+        display:  block;
+      }
+
+      i.mdi {
+        margin-left: 0;
+        float: none;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background: rgba(0,0,0,.05);
+        color: rgba(0,0,0,.95);
+        z-index: $z-message;
+      }
+
+      &:first-child {
+        border-top-width: 0;
+      }
+
+      &.focus {
+        background: rgba(0,0,0,.05);
+        color: rgba(0,0,0,.95);
+      }
+
+      &.disabled {
+        background: none;
+        cursor: default;
+      }
+
+      &.active {
+        background: rgba(0,0,0,.07);
+        color: rgba(0,0,0,.95);
+      }
+
+      &.subtitle {
+        background: none;
+        cursor: default;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        color: $black;
+        font-size: 14px;
+        padding-top: 20px;
+        font-weight:500;
+      }
+    }
+  }
+
+  &.full {
+    background: transparent;
+    box-sizing: border-box;
+    width: 100%;
+    border-left: 1px solid $gray-100;
+    > .target {
+      display: block;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    > .menu {
+      width: 100%;
+    }
+  }
+
+  &.select-dayoff-type {
+    position: static;
+    > .menu {
+      width: 100%;
+      &.daysoff-page-width {
+	      /* on desktop view, make sure we don't go full-width */
+        max-width: 500px;
+      }
+
+      > .item {
+        white-space: normal;
+      }
+    }
+  }
+}

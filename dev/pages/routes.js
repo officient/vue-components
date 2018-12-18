@@ -4,6 +4,10 @@ import MinutesPicker from './MinutesPicker/MinutesPicker.vue'
 import BlurryText from './BlurryText/BlurryText.vue'
 import InputSwitch from './InputSwitch/InputSwitch.vue'
 import Pagination from './Pagination/Pagination.vue'
+import InputDate from './InputDate/InputDate.vue'
+import BudgetUsage from './BudgetUsage/BudgetUsage.vue'
+import Loading from './Loading/Loading.vue'
+import Dropdown from './Dropdown/Dropdown.vue'
 import Index from './Index.vue'
 
 export default [
@@ -30,6 +34,18 @@ export default [
 	{
 		path: '/Pagination',
 		component: Pagination,
+  },
+		path: '/InputDate',
+		component: InputDate
+  },
+		path: '/BudgetUsage',
+		component: BudgetUsage,
+  },
+		path: '/Loading',
+		component: Loading,
+  },
+		path: '/Dropdown',
+		component: Dropdown,
 	},
 	{
 		path: '/*',

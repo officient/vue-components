@@ -26,8 +26,7 @@ export default {
     pendingStyles () {
       return {
         backgroundColor: `#${this.item.color}`,
-        right: this.isMaxed ? 0 : 'auto',
-        left: this.isMaxed ? 'auto' : `${this.approvedWidth}%`,
+        left: this.isMaxed ? 0 : `${this.approvedWidth}%`,
         width: `${this.getPending}%`,
       }
     },
