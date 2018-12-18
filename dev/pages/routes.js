@@ -4,6 +4,7 @@ import MinutesPicker from './MinutesPicker/MinutesPicker.vue'
 import BlurryText from './BlurryText/BlurryText.vue'
 import InputSwitch from './InputSwitch/InputSwitch.vue'
 import Loading from './Loading/Loading.vue'
+import Dropdown from './Dropdown/Dropdown.vue'
 import Index from './Index.vue'
 
 export default [
@@ -30,6 +31,9 @@ export default [
 	{
 		path: '/Loading',
 		component: Loading,
+  },
+		path: '/Dropdown',
+		component: Dropdown,
 	},
 	{
 		path: '/*',
