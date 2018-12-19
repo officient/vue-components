@@ -3,6 +3,7 @@ import Modal from './Modal/Modal.vue'
 import MinutesPicker from './MinutesPicker/MinutesPicker.vue'
 import BlurryText from './BlurryText/BlurryText.vue'
 import InputSwitch from './InputSwitch/InputSwitch.vue'
+import EditBankAccount from './EditBankAccount/EditBankAccount.vue'
 import Pagination from './Pagination/Pagination.vue'
 import InputDate from './InputDate/InputDate.vue'
 import BudgetUsage from './BudgetUsage/BudgetUsage.vue'
@@ -32,18 +33,26 @@ export default [
 		component: InputSwitch,
 	},
 	{
+		path: '/EditBankAccount',
+		component: EditBankAccount,
+	},
+	{
 		path: '/Pagination',
 		component: Pagination,
-  },
+	},
+	{
 		path: '/InputDate',
 		component: InputDate
-  },
+	},
+	{
 		path: '/BudgetUsage',
 		component: BudgetUsage,
-  },
+	},
+	{
 		path: '/Loading',
 		component: Loading,
-  },
+	},
+	{
 		path: '/Dropdown',
 		component: Dropdown,
 	},
