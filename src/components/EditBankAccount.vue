@@ -2,7 +2,7 @@
   <div class="content">
     <div class="box ui form">
       <div class="fields">
-        <input type="hidden" name="bank_account_iban" v-model="bankResult" autocomplete="off">
+        <input type="hidden" name="bank_account_iban" :value="bankResult" autocomplete="off">
         <InputSelectField
           v-if="availableBankTypes.length > 1"
           v-model="bankType"
@@ -16,8 +16,8 @@
             <InputText
               v-model="banks.IBAN.iban"
               name="iban"
-              :title="$local('IBAN_LABEL', nationality_country_code)"
-              :placeholder="$local('IBAN_PLACEHOLDER', nationality_country_code)"
+              :title="$local('IBAN_LABEL', countryCode)"
+              :placeholder="$local('IBAN_PLACEHOLDER', countryCode)"
               class="span-full"
             />
           </template>
@@ -100,19 +100,30 @@ import InputText from './input/InputText.vue'
 import InputSelectField from './input/InputSelectField.vue'
 
 export default {
-	name: 'EditBankAccount',
-	props: [
-		'sync_integration',
-		'bank_account_iban',
-		'nationality_country_code',
-	],
+  name: 'EditBankAccount',
+  props: {
+    onlyIBAN: {
+      // restrict bank types to IBAN
+      // when user is an integration user
+      type: Boolean,
+      default: false,
+    },
+    initialBankData: {
+      // initial bank data as of now
+      // can be parsed or stringified JSON
+      type: [String, Object],
+    },
+    countryCode: {
+      // used for displaying the correct IBAN placeholder and label
+      type: [String, Number]
+    },
+  },
 	components: {
 		InputText,
 		InputSelectField,
 	},
 	data() {
 		return {
-			availableBankTypes: [],
 			bankType: '',
 			banks: {
 				IBAN: {
@@ -146,7 +157,15 @@ export default {
 	computed: {
 		bankResult() {
 			return JSON.stringify(this.banks[this.bankType])
-		},
+    },
+    availableBankTypes () {
+      // only allowed IBAN, usually when employee is synced with an integration
+			if (this.onlyIBAN) {
+				return ['IBAN']
+      }
+      
+      return Object.keys(this.banks)
+    },
 		availableBankTypesOptions() {
 			return this.availableBankTypes.map(id => {
 				return {
@@ -160,29 +179,46 @@ export default {
 				{ id: 'checking', title: this.$t('ACCOUNT_CHECKING') },
 				{ id: 'saving', title: this.$t('ACCOUNT_SAVING') },
 			]
-		},
+    },
+    initialBankDataParsed () {
+      if (!this.initialBankData) {
+        // it's null, undefined, empty string, ...
+        return
+      }
+
+      if (typeof this.initialBankData === 'object') {
+        // it's already an object, check if it has the keys we want
+        if (this.initialBankData.iban || this.initialBankData.country_code) {
+          return this.initialBankData
+        }
+      }
+
+      try {
+        // it's a string, try to parse it
+        return JSON.parse(this.initialBankData)
+      } catch (err) {}
+    },
 	},
-	beforeMount() {
-		if (this.sync_integration === null) {
-			this.availableBankTypes = Object.keys(this.banks)
-		} else {
-			this.availableBankTypes = ['IBAN']
-		}
-		if (this.availableBankTypes.length === 1) {
-			this.bankType = this.availableBankTypes[0]
-		}
-		try {
-			const bankAccount = JSON.parse(this.bank_account_iban)
-			if (bankAccount.iban) {
-				this.banks.IBAN = bankAccount
-				this.bankType = 'IBAN'
-			} else if (bankAccount.country_code) {
-				this.banks[bankAccount.country_code] = bankAccount
-				this.bankType = bankAccount.country_code
-			}
-		} catch (err) {
-			/* no bank account */
-		}
+	mounted() {
+		this.setInitialData()
+	},
+	methods: {
+		setInitialData() {
+			if (this.availableBankTypes.length === 1) {
+        this.bankType = this.availableBankTypes[0]
+      }
+
+      const bankAccount = this.initialBankDataParsed
+      if (bankAccount) {
+        if (bankAccount.iban) {
+					this.banks.IBAN = bankAccount
+					this.bankType = 'IBAN'
+				} else if (bankAccount.country_code) {
+					this.banks[bankAccount.country_code] = bankAccount
+					this.bankType = bankAccount.country_code
+				}
+      }
+    },
 	},
 }
 </script>
