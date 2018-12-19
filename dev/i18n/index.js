@@ -1,3 +1,5 @@
+// for development only!!!
+
 import Vue from 'vue'
 import moment from 'moment'
 
@@ -6,8 +8,6 @@ const messages = {
   // () => import() creates a chunk in the /html/js/chunks folder with the
   // given webpackChunkName in the comment. Returns a promise
   en: () => import( /* webpackChunkName: 'en' */ './en.json'),
-  nl: () => import( /* webpackChunkName: 'nl' */ './nl.json'),
-  fr: () => import( /* webpackChunkName: 'fr' */ './fr.json'),
 }
 
 // load our language chunk and set our language after request
