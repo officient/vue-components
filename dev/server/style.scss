@@ -1,4 +1,9 @@
+@import "./scss/_vars.scss";
+@import "./scss/_mixins.scss";
 @import "./scss/fonts.scss";
+@import "./scss/BudgetUsage.scss";
+@import "./scss/box.scss";
+@import "./scss/form.scss";
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -10,6 +15,7 @@
   
   body {
     margin: 0;
+    margin: 2rem;
     font-size: 14px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     background: #FAFAFA;

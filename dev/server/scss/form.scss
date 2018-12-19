@@ -1,0 +1,374 @@
+$form-border-color: #CBDDEC;
+$form-disabled-color: #888;
+
+.ui.form {
+  input,
+  select,
+  textarea,
+  .input-switch {
+    padding: 10px 10px 10px 0;
+    display: block;
+    border: none;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+      color: $form-disabled-color;
+      cursor: not-allowed;
+    }
+
+    &.error {
+      border-bottom-color: $red-200;
+    }
+  }
+
+  .select,
+  input,
+  textarea {
+    border-bottom: 1px solid $form-border-color;
+
+    &:focus {
+      border-bottom: 1px solid $blue-200;
+      box-shadow: 0 1px $blue-200;
+    }
+  }
+
+  .input.text {
+    padding: 10px 10px 10px 0;
+    display: block;
+    width: 100%;
+    background: white;
+    color: $form-disabled-color;
+    cursor: not-allowed;
+    border-bottom: 1px solid $form-border-color;
+
+    &.avatar {
+      padding-top: 4px;
+    }
+  }
+
+  .field > .dropdown {
+    width: 100%;
+    border-bottom: 1px solid $form-border-color;
+
+    .target {
+      display: block;
+      padding: 10px 10px 10px 0;
+      width: 100%;
+    }
+
+    &.focus {
+      border-bottom: 1px solid $blue-200;
+      box-shadow: 0 1px $blue-200;
+    }
+  }
+
+  .checkboxes.list,
+  .labels.list {
+    padding-top: 1px;
+    border-bottom: 1px solid $form-border-color;
+    @media only screen and (max-width: 500px) {
+      border-bottom: none;
+    }
+  }
+
+  .checkboxes.list {
+    .item:first-child {
+      margin-left: -10px;
+    }
+    @media only screen and (max-width: 500px) {
+      .item:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .input.buttons {
+    padding-top: 10px;
+  }
+
+  .field.disabled,
+  .field[disabled] {
+    cursor: not-allowed;
+
+    label {
+      pointer-events: none;
+    }
+
+    input,
+    select {
+      color: $form-disabled-color;
+      pointer-events: none;
+    }
+  }
+  // Padding for select menu
+  /* webkit only fixes for appearance */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {
+      padding-left: 5px;
+      margin-left: -5px;
+      width: calc(100% + 5px);
+    }
+  }
+  /* firefox only css */
+  @-moz-document url-prefix() {
+    select {
+      margin-left: -3px;
+      width: calc(100% + 3px);
+    }
+  }
+  /* edge only css */
+  @supports (-ms-ime-align:auto) {
+    select {
+      margin-left: -3px;
+      padding-left: 0;
+    }
+  }
+}
+
+// set heights
+.ui.form .field .dropdown,
+.ui.form .field .input.text,
+.ui.form .field .input-switch {
+  height: 41px;
+}
+
+.ui.form {
+  .field {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-bottom: 40px;
+    padding-right: 100px;
+  }
+
+  label {
+    font-weight: normal;
+    user-select: none;
+    font-size: 14px;
+    line-height: 19px;
+    height: 19px;
+    color: #5264AE;
+    display: block;
+  }
+
+  .labelled {
+    position: relative;
+
+    i.mdi,
+    span.label {
+      pointer-events: none;
+      padding-top: 12px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    input {
+      padding-left: 20px;
+    }
+
+    span.label + input {
+      padding-left: 35px;
+    }
+
+    select {
+      padding-left: 33px;
+    }
+
+    /* firefox only css */
+    @-moz-document url-prefix() {
+      select {
+        padding-left: 25px;
+      }
+    }
+    /* edge only css */
+    @supports (-ms-ime-align:auto) {
+      select {
+        padding-left: 25px;
+      }
+    }
+
+    .flag {
+      top: -1px;
+    }
+  }
+
+  .fields {
+    position: relative;
+    @extend .clearfix;
+
+    .field {
+      width: 50%;
+      float: left;
+    }
+
+    &.three .field {
+      width: 33%;
+
+      &.pad-one {
+        margin-left: 33%;
+      }
+
+      &.span-two {
+        width: 66%;
+      }
+    }
+
+    &.four .field {
+      width: 25%;
+
+      &.span-three {
+        width: 75%;
+      }
+
+      &.span-two {
+        width: 50%;
+        padding-right: 10px;
+      }
+
+      &.span-half {
+        width: 12.5%;
+        padding-right: 10px;
+      }
+    }
+
+    &.seven .field {
+      width: 14%;
+      padding-right: 5px;
+    }
+
+    .field.span-full {
+      width: 100%;
+    }
+
+    &.full {
+      .field.span-full {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .fields .extra {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 18px;
+
+    &.image {
+      z-index: 2;
+      margin-top: 0;
+      max-height: 30px;
+    }
+
+    &.dropdown {
+      z-index: 2;
+      margin-top: 0;
+
+      .target {
+        padding: 10px;
+        display: block;
+      }
+
+      &.focus .target,
+      .target:hover {
+        background: rgba($blue-200, .1);
+      }
+    }
+
+    &.action {
+      padding: 10px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      outline: none;
+
+      &:focus,
+      &:hover {
+        background: rgba($blue-200, .1);
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .field .valuelabel {
+    float: right;
+    font-size: 10px;
+    margin-top: 5px;
+    color: #5264AE;
+
+    &.red {
+      color: $red-200;
+    }
+  }
+
+  .double-input {
+    .select,
+    input {
+      width: 45%;
+      float: left;
+
+      &:last-child {
+        float: right;
+      }
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    .field {
+      padding-right: 20px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .field {
+      width: 100% !important;
+      padding-right: 0;
+    }
+  }
+}
+
+.box.form {
+  padding: 50px;
+
+  &.compact {
+    padding: 20px;
+
+    .field {
+      margin-bottom: 0;
+
+      &.margin-top {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 20px;
+
+    &.compact {
+      .field {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.box.customfielddemo{
+  border: 3px dotted #CCC;
+}
+
+
+@media only screen and (min-width: 600px) {
+  &.field--dependents {
+    margin-top: 11px;
+  }
+
+  &.field--dependents-first {
+    margin-top: 31px;
+  }
+}

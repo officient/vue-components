@@ -1,0 +1,47 @@
+.clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  
+  
+  @mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+      @content;
+    }
+  }
+  
+  @mixin placeholder {
+    // Webkit, Safari, Chrome, Opera
+    @include optional-at-root('::-webkit-input-placeholder') {
+      @content;
+    }
+  
+    // Firefox 4 to 18
+    @include optional-at-root(':-moz-placeholder') {
+      @content;
+    }
+  
+    // Firefox 19+
+    @include optional-at-root('::-moz-placeholder') {
+      @content;
+    }
+  
+    // IE 10, IE 11
+    @include optional-at-root(':-ms-input-placeholder') {
+      @content;
+    }
+  
+    // Microsoft Edge
+    @include optional-at-root('::-ms-input-placeholder') {
+      @content;
+    }
+  
+    // Modern
+    @include optional-at-root('::placeholder') {
+      @content;
+    }
+  }
+  
