@@ -26,6 +26,7 @@
               v-model="banks.GB.sort_code"
               name="sort_code"
               :title="$t('SORT_CODE')"
+              placeholder="12-34-56"
               class="span-full"
             />
             <InputText
@@ -81,6 +82,7 @@
               v-model="banks.AU.bsb_number"
               name="bsb_number"
               :title="$t('BSB_NUMBER')"
+              placeholder="123456"
               class="span-full"
             />
             <InputText
