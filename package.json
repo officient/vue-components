@@ -67,6 +67,7 @@
     "npm": "6.4.1"
   },
   "dependencies": {
+    "vue-material-design-icons": "^2.4.0",
     "pikaday": "1.5.1"
   }
 }

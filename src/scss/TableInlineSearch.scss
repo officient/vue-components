@@ -1,0 +1,42 @@
+@import './_vars';
+
+.table-inline-search {
+  background: $table-inline-search-background;
+
+  display: block;
+  width: 100%;
+  position: relative;
+
+  input {
+    width: 100%;
+    height: $table-inline-search-row-height * 2;
+    font-size: 12px;
+    line-height: $table-inline-search-row-height * 2;
+    outline: none;
+    border: none;
+    padding: 0 20px;
+    background: $table-inline-search-background;
+    color: #4d6c86;
+
+    &:focus {
+      background: $table-inline-search-background-focus;
+    }
+  }
+}
+
+.table-inline-search__close {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  height: $table-inline-search-row-height * 2;
+  line-height: $table-inline-search-row-height * 2;
+  text-align: center;
+  width: $table-inline-search-row-height * 2;
+  font-size: 12px;
+  transition: $tr-time color $tr-ease;
+
+  &:hover {
+    color: $red-200;
+  }
+}

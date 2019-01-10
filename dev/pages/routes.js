@@ -9,6 +9,7 @@ import InputDate from './InputDate/InputDate.vue'
 import BudgetUsage from './BudgetUsage/BudgetUsage.vue'
 import Loading from './Loading/Loading.vue'
 import Dropdown from './Dropdown/Dropdown.vue'
+import TableInlineSearch from './TableInlineSearch/TableInlineSearch.vue'
 import Index from './Index.vue'
 
 export default [
@@ -55,6 +56,10 @@ export default [
 	{
 		path: '/Dropdown',
 		component: Dropdown,
+	},
+	{
+		path: '/TableInlineSearch',
+		component: TableInlineSearch,
 	},
 	{
 		path: '/*',
