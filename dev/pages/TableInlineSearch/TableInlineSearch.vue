@@ -31,7 +31,8 @@ export default {
 <style scoped lang="scss">
 .table {
   display: table;
-
+  width: 400px;
+  
   .tbody {
     display: table-row-group;
     vertical-align: middle;

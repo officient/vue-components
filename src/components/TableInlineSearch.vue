@@ -12,11 +12,13 @@
 </template>
 
 <script>
+import IconClose from 'vue-material-design-icons/Close'
 import '../scss/TableInlineSearch.scss'
 import '../scss/Icons.scss'
 
 export default {
   name: 'TableInlineSearch',
+  components: { IconClose },
   props: {
     value: String,
     placeholder: String
