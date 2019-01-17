@@ -4,8 +4,13 @@
   background: $table-inline-search-background;
 
   display: block;
+  vertical-align: middle;
   width: 100%;
   position: relative;
+
+  /* these 2 lines shift the block slightly left, to close the 1px gap that exists there */ 
+  width: calc(100% + 1px);
+  margin-left: -1px;
 
   input {
     width: 100%;
