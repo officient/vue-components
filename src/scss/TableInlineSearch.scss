@@ -1,4 +1,5 @@
 @import './_vars';
+@import './_mixins';
 
 .table-inline-search {
   background: $table-inline-search-background;
@@ -25,6 +26,10 @@
 
     &:focus {
       background: $table-inline-search-background-focus;
+    }
+
+    @include placeholder {
+      color: #939393;
     }
   }
 }
