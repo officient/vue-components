@@ -1,0 +1,6 @@
+officient/ui:
+  build:
+    image: officient/ui
+    dockerfile: .docker/node.Dockerfile
+  environment:
+    NODE_ENV: test

@@ -1,0 +1,7 @@
+- name: test
+  type: parallel
+  steps: 
+  - service: officient/ui
+    command: npm run eslint
+  - service: officient/ui
+    command: npm run unit

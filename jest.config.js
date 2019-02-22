@@ -23,9 +23,10 @@ module.exports = {
     "Toast": true
   },
   "coverageReporters": [
-    "text"
+    "text",
+    "html"
   ],
   "collectCoverageFrom": [
-    "client/src/**/*.{js,vue}"
+    "src/**/*.{js,vue}"
   ],
 }

@@ -1,17 +1,17 @@
 {
-  "name": "officient-vue-components",
+  "name": "@officient/ui",
   "version": "2.2.0",
-  "description": "Shared Vue components for Officient",
+  "description": "Shared UI / Vue components for Officient",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --hot --config dev/server/config/webpack.hmr.config.js",
-    "unit": "jest",
-    "test": "npm run lint && jest",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint -c .eslintrc.js --ext .js,.vue components server i18n",
+    "unit": "jest --coverage",
+    "test": "npm run lint && npm run unit",
+    "eslint": "eslint -c .eslintrc.js --ext .js,.vue components server i18n",
+    "prepublish": "npm test && npm run build",
     "clean": "rimraf node_modules/.cache html/js/main*.js html/css/style*css html/index*.html"
   },
-  "author": "",
+  "author": "Officient",
   "license": "ISC",
   "devDependencies": {
     "@vue/test-utils": "1.0.0-beta.11",
