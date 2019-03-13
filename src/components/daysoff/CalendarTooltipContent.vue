@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div v-if="noContractDay" class="calendar-tooltip-row">
+      <div v-if="isWeekendDay" class="calendar-tooltip-content">{{ $t('WEEKEND') }}</div>
+      <div v-else class="calendar-tooltip-content">{{ $t('NULL_SCHEDULE_DAY') }}</div>
+    </div>
+
     <div v-if="emptyDay" class="calendar-tooltip-row">
       <div v-if="isWeekendDay" class="calendar-tooltip-content">{{ $t('WEEKEND') }}</div>
       <div v-else class="calendar-tooltip-content">{{ $t('ZERO_SCHEDULE_DAY') }}</div>
@@ -64,9 +69,9 @@ export default {
     plannedHours () {
       const { weeklySchedule, dateStr } = this
       if (weeklySchedule && dateStr) {
-        return weeklySchedule[dateStr] || 0
+        return weeklySchedule[dateStr]
       }
-      return 0
+      return null
     },
     companyDaysoffSlots () {
       return this.slots.filter(x => x.classBools.company)
@@ -97,7 +102,10 @@ export default {
       return Math.max(0, workTime)
     },
     emptyDay () {
-      return this.slots.length === 0 && !this.plannedHours
+      return this.slots.length === 0 && this.plannedHours == 0
+    },
+    noContractDay () {
+      return this.slots.length === 0 && this.plannedHours == null
     },
     isWeekendDay () {
       const day = new Date(this.dateStr).getDay()
