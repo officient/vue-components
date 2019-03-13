@@ -1,8 +1,7 @@
 <template>
   <div>
     <div v-if="noContractDay" class="calendar-tooltip-row">
-      <div v-if="isWeekendDay" class="calendar-tooltip-content">{{ $t('WEEKEND') }}</div>
-      <div v-else class="calendar-tooltip-content">{{ $t('NULL_SCHEDULE_DAY') }}</div>
+      <div class="calendar-tooltip-content">{{ $t('NULL_SCHEDULE_DAY') }}</div>
     </div>
 
     <div v-if="emptyDay" class="calendar-tooltip-row">
