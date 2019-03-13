@@ -1,12 +1,18 @@
 <template>
   <div>
+    <div v-if="noContractDay" class="calendar-tooltip-row">
+      <div v-if="isWeekendDay" class="calendar-tooltip-content">{{ $t('WEEKEND') }}</div>
+      <div v-else class="calendar-tooltip-content">{{ $t('NULL_SCHEDULE_DAY') }}</div>
+    </div>
+
     <div v-if="emptyDay" class="calendar-tooltip-row">
-      <div class="calendar-tooltip-content">{{ $t('ZERO_SCHEDULE_DAY') }}</div>
+      <div v-if="isWeekendDay" class="calendar-tooltip-content">{{ $t('WEEKEND') }}</div>
+      <div v-else class="calendar-tooltip-content">{{ $t('ZERO_SCHEDULE_DAY') }}</div>
     </div>
 
     <div class="calendar-tooltip-row" v-if="workTime > 0 && companyDaysoffSlots.length === 0">
       <div class="calendar-tooltip-title">{{ $t('WORKING_TIME') }}</div>
-      <div class="calendar-tooltip-content">{{  workTime | minutesToHoursMinutes }}</div>
+      <div class="calendar-tooltip-content">{{  workTime | minutesToHoursMinutes }}</div>
     </div>
 
     <div v-if="companyDaysoffSlots.length > 0" class="calendar-tooltip-row">
@@ -42,7 +48,7 @@
 <script>
 import '../../scss/Tooltip.scss'
 import CalendarTooltipItem from './CalendarTooltipItem'
-import { minutesToHoursMinutes } from '../../../lib/utils/filters'
+import { minutesToHoursMinutes } from '../../utils/filters'
 
 export default {
   name: 'CalendarTooltipContent',
@@ -63,9 +69,9 @@ export default {
     plannedHours () {
       const { weeklySchedule, dateStr } = this
       if (weeklySchedule && dateStr) {
-        return weeklySchedule[dateStr] || 0
+        return weeklySchedule[dateStr]
       }
-      return 0
+      return null
     },
     companyDaysoffSlots () {
       return this.slots.filter(x => x.classBools.company)
@@ -96,7 +102,14 @@ export default {
       return Math.max(0, workTime)
     },
     emptyDay () {
-      return this.slots.length === 0 && !this.plannedHours
+      return this.slots.length === 0 && this.plannedHours == 0
+    },
+    noContractDay () {
+      return this.slots.length === 0 && this.plannedHours == null
+    },
+    isWeekendDay () {
+      const day = new Date(this.dateStr).getDay()
+      return (day === 6) || (day === 0)
     },
     showPlannedHours () {
       return this.plannedHours &&
