@@ -1,6 +1,7 @@
 
 export default async function transformCustomFieldFormData(getCustomFields, getCustomFieldOptions, valuesCustomFields) {
-    const allCustomFields = await getCustomFields()
+    const res = await getCustomFields()
+    const allCustomFields = res.body.data
     const customFields = []
 
     for (const customFieldWithValue of valuesCustomFields) {
