@@ -10,8 +10,10 @@
             </select>
             </div>
             <input-date v-else-if="type === 'date'" placeholder="dd/mm/yyyy" :value="value" @input="$emit('input', $event)"></input-date>
-            <input v-else-if="type === 'email'" :id="`cf_${id}`" type="email" :placeholder="name" :value="value" @input="$emit('input', $event.target.value)" />
-            <input v-else :id="`cf_${id}`" type="text" :placeholder="name" :value="value" @input="$emit('input', $event.target.value)" /> </div>
+            <input v-else-if="cf.type === 'email'" :id="`cf_${cf.id}`" type="email" :placeholder="$t('PLEASE_ENTER_EMAIL')" v-model="cf.value" />
+          <input v-else-if="cf.type === 'int'" :id="`cf_${cf.id}`" type="number" :placeholder="$t('PLEASE_ENTER_NUMBER')" v-model="cf.value" />
+          <input v-else-if="cf.type === 'money'" :id="`cf_${cf.id}`" type="number" :placeholder="$t('PLEASE_ENTER_NUMBER')" v-model="cf.value" />
+          <input v-else :id="`cf_${cf.id}`" type="text" placeholder="" v-model="cf.value" /> </div>
         </div>
 </template>
 
