@@ -24,12 +24,26 @@
     <span v-if="labelRight" class="input-switch__label input-switch__label--right" >
       <span :aria-hidden="!checked">{{ labelRight }}</span>
     </span>
+    <span v-if="labelRightOn && checked" class="input-switch__label input-switch__label--right" >
+      <span>{{ labelRightOn }}</span>
+    </span>
+    <span v-if="labelRightOff && !checked" class="input-switch__label input-switch__label--right" >
+      <span>{{ labelRightOff }}</span>
+    </span>
   </label>
 </template>
 
 <script>
-import '../scss/InputSwitch.scss'
-
+/**
+ * Toggle between true or false; 0 or 1
+ *
+ * @examples
+ * <InputSwitch
+ *  v-model="confirm_retry_push"
+ *  labelRightOn="yup"
+ *  labelRightOff="nope"
+ * />
+ */
 export default {
   name: 'InputSwitch',
   props: {
@@ -46,6 +60,8 @@ export default {
       default: ''
     },
     labelRight: String,
+    labelRightOn: String,
+    labelRightOff: String,
     labelLeft: String
   },
   computed: {
