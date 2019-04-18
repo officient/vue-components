@@ -34,16 +34,8 @@
 </template>
 
 <script>
-/**
- * Toggle between true or false; 0 or 1
- *
- * @examples
- * <InputSwitch
- *  v-model="confirm_retry_push"
- *  labelRightOn="yup"
- *  labelRightOff="nope"
- * />
- */
+import '../scss/InputSwitch.scss'
+
 export default {
   name: 'InputSwitch',
   props: {
