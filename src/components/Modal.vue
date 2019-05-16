@@ -4,14 +4,14 @@
       <div v-if="show" class="modal-backdrop">
         <div class="modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" v-if="hasHeaderSlot">
               <slot name="header"></slot>
               <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
             </div>
             <div class="modal-body">
               <slot/>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer"  v-if="hasFooterSlot">
               <slot name="footer"></slot>
             </div>
           </div>
@@ -61,6 +61,14 @@ export default {
         unfreezeBackground()
       }
     }
+  },
+  computed: {
+    hasHeaderSlot () {
+      return !!this.$slots['header']
+    },
+    hasFooterSlot () {
+      return !!this.$slots['footer']
+    },
   },
   methods: {
     // for closing on escape
