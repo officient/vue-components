@@ -3,10 +3,16 @@
     <transition name="slide-fade">
       <div v-if="show" class="modal-backdrop">
         <div class="modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
-          <div class="modal-subwrapper">
-            <div class="modal-content">
+          <div class="modal-content">
+            <div class="modal-header">
+              <slot name="header"></slot>
               <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
+            </div>
+            <div class="modal-body">
               <slot/>
+            </div>
+            <div class="modal-footer">
+              <slot name="footer"></slot>
             </div>
           </div>
         </div>
