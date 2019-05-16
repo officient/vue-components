@@ -1,17 +1,17 @@
 <template>
   <portal to="modal">
     <transition name="slide-fade">
-      <div v-if="show" class="modal-backdrop">
-        <div class="modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
-          <div class="modal-content">
-            <div class="modal-header" v-if="hasHeaderSlot">
+      <div v-if="show" class="ovc-modal-backdrop">
+        <div class="ovc-modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
+          <div class="ovc-modal-content">
+            <div class="ovc-modal-header" v-if="hasHeaderSlot">
               <slot name="header"></slot>
               <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
             </div>
-            <div class="modal-body">
+            <div class="ovc-modal-body">
               <slot/>
             </div>
-            <div class="modal-footer"  v-if="hasFooterSlot">
+            <div class="ovc-modal-footer"  v-if="hasFooterSlot">
               <slot name="footer"></slot>
             </div>
           </div>
