@@ -11,7 +11,7 @@
             <div class="ovc-modal-body">
               <slot/>
             </div>
-            <div class="ovc-modal-footer"  v-if="hasFooterSlot">
+            <div class="ovc-modal-footer" v-if="hasFooterSlot">
               <slot name="footer"></slot>
             </div>
           </div>

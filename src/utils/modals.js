@@ -1,17 +1,20 @@
+const element = document.getElementsByClassName('page-container')[0]
+
 export function freezeBackground () {
-  if (document.body.classList.contains('prevent-scroll')) {
+  if (element.classList.contains('prevent-scroll')) {
     return // prevent duplicate calls
   }
-  document.body.style.setProperty('top', - (document.documentElement.scrollTop) + 'px' )
-  document.body.classList.add('prevent-scroll')
+  element.style.setProperty('top', - (document.documentElement.scrollTop) + 'px' )
+  document.documentElement.scrollTop = parseInt(top) * -1
+  element.classList.add('prevent-scroll')
 }
 
 export function unfreezeBackground () {
-  if (!document.body.classList.contains('prevent-scroll')) {
+  if (!element.classList.contains('prevent-scroll')) {
     return // prevent duplicate calls
   }
-  const top = document.body.style.getPropertyValue('top')
-  document.body.classList.remove('prevent-scroll')
-  document.body.style.removeProperty('top')
+  const top = element.style.getPropertyValue('top')
+  element.classList.remove('prevent-scroll')
+  element.style.removeProperty('top')
   document.documentElement.scrollTop = parseInt(top) * -1
 }
