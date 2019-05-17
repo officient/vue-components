@@ -16,6 +16,7 @@
   align-items: center;
   margin: $modal-margin auto;
   min-height: calc(100% - #{$modal-margin * 2}); // to center our modal
+  pointer-events: none;
 
   .ovc-modal-content {
     position: relative;
@@ -23,6 +24,7 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+    pointer-events: all;
 
     .ovc-modal-header {
       position: sticky;
