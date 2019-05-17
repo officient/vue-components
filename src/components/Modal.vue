@@ -6,9 +6,9 @@
           <div class="ovc-modal-content">
             <div class="ovc-modal-header" v-if="hasHeaderSlot">
               <slot name="header"></slot>
-              <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
             </div>
             <div class="ovc-modal-body">
+              <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
               <slot/>
             </div>
             <div class="ovc-modal-footer" v-if="hasFooterSlot">
