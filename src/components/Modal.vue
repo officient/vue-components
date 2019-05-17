@@ -62,6 +62,9 @@ export default {
       }
     }
   },
+  mounted () {
+    freezeBackground()
+  },
   computed: {
     hasHeaderSlot () {
       return !!this.$slots['header']

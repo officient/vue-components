@@ -1,6 +1,5 @@
-const element = document.getElementsByClassName('page-container')[0]
-
 export function freezeBackground () {
+  const element = document.getElementsByClassName('page-container')[0]
   if (element.classList.contains('prevent-scroll')) {
     return // prevent duplicate calls
   }
@@ -10,6 +9,7 @@ export function freezeBackground () {
 }
 
 export function unfreezeBackground () {
+  const element = document.getElementsByClassName('page-container')[0]
   if (!element.classList.contains('prevent-scroll')) {
     return // prevent duplicate calls
   }
