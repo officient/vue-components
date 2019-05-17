@@ -1,5 +1,5 @@
 <template>
-  <portal to="modal">
+  <portal :to="targetPortal">
     <transition name="slide-fade">
       <div v-if="show" class="ovc-modal-backdrop">
         <div class="ovc-modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
@@ -43,6 +43,16 @@ export default {
       type: Boolean,
       default: true,
       required: false
+    },
+    allowBackgroundClose: {
+      type: Boolean,
+      default: true,
+      required: false
+    },
+    targetPortal: {
+      type: String,
+      default: 'modal',
+      required: false
     }
   },
   mixins: [ clickaway ],
@@ -64,7 +74,7 @@ export default {
   },
   mounted () {
     if (this.show) {
-    freezeBackground()
+      freezeBackground()
     }
   },
   computed: {
