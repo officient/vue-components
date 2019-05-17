@@ -2,13 +2,13 @@
   <portal :to="targetPortal">
     <transition name="slide-fade">
       <div v-if="show" class="ovc-modal-backdrop">
-        <div class="ovc-modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="hideModal">
+        <div class="ovc-modal-wrapper" :style="{ width: `${width}px` }" v-on-clickaway="onBackgroundClick">
           <div class="ovc-modal-content">
             <div class="ovc-modal-header" v-if="hasHeaderSlot">
               <slot name="header"></slot>
             </div>
             <div class="ovc-modal-body">
-              <i class="mdi mdi-close" v-if="canClose" @click="hideModal"></i>
+              <i class="mdi mdi-close" v-if="canClose" @click="onCloseIconClick"></i>
               <slot/>
             </div>
             <div class="ovc-modal-footer" v-if="hasFooterSlot">
@@ -89,11 +89,25 @@ export default {
     // for closing on escape
     escapeHandler (e) {
       if (e.key === 'Escape' && this.show) {
-        this.hideModal()
+        this.onCloseIconClick() // simulate icon click
       }
     },
-    hideModal () {
-      if (this.canClose) this.$emit('close')
+    onCloseIconClick () {
+      if (!this.canClose) {
+        return
+      }
+      this.$emit('close')
+    },
+    onBackgroundClick(){
+      if(!this.canClose){
+        return
+      }
+      // If 'allowBackgroundClose' is false, the modal can only be closed by clicking the mdi-close icon.
+      // this check is used if e.g. you don't want people to accidentally close the modal by clicking next to it.
+      if (!this.allowBackgroundClose) {
+        return
+      }
+      this.$emit('close')
     }
   }
 }
