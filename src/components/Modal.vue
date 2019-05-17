@@ -63,7 +63,9 @@ export default {
     }
   },
   mounted () {
+    if (this.show) {
     freezeBackground()
+    }
   },
   computed: {
     hasHeaderSlot () {
