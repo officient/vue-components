@@ -5,7 +5,7 @@
 
     <div v-if="item.duration_minutes > 0" class="calendar-tooltip-item-details">
       <span>{{ item.duration_minutes | enagementToHoursMinutes }}</span>
-      <span v-if="item.duration_minutes > 0 && item.duration_minutes < 5 * 60">
+      <span v-if="item.start_minutes && item.duration_minutes > 0 && item.duration_minutes < 5 * 60">
         <!-- If half a day. Show which part of day -->
         - {{ item | daysOffPartOfDay }}
       </span>

@@ -23,6 +23,10 @@ export function enagementToHoursMinutes (minutes) {
 }
 
 export function daysOffPartOfDay ({ start_minutes, duration_minutes }) {
+  if (!start_minutes) {
+    return // start_minutes not set or 0, midnight is not morning, hide it
+  }
+  
   const middle = start_minutes + (duration_minutes / 2)
 
   if (duration_minutes <= (5 * 60)) {
