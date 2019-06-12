@@ -67,6 +67,7 @@
 		
 		// we should have a minimum number for the position 'left', to avoid placing the tooltip off-screen
 		var minimum_position_left = 20  + tooltipbounds.width / 2;
+		var maximum_position_left = window.innerWidth - 20  - tooltipbounds.width / 2;
 
         switch (this.mdDirection) {
           case 'top':
@@ -98,7 +99,7 @@
         }
 
         this.topPosition = cssPosition.top;
-        this.leftPosition =  Math.max( minimum_position_left , cssPosition.left) ;
+	this.leftPosition =  Math.min( Math.max( minimum_position_left , cssPosition.left)  , maximum_position_left)
       },
       generateTooltipClasses() {
         let classes = [];
