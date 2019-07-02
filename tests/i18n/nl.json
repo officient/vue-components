@@ -6,5 +6,11 @@
   "DAYS_OFF_PENDING_APPROVAL": "Verlofaanvragen wachtend op goedkeuring",
   "Sick day": "Ziekte",
   "NEW_YEARS_DAY": "Nieuwjaarsdag",
-  "ZERO_SCHEDULE_DAY": "Vrije dag"
+  "ZERO_SCHEDULE_DAY": "Vrije dag",
+  "HOURS_SHORT": "{0}u",
+  "MINS_SHORT": "{0}min",
+  "HOURS_MINS": "{0}u{1}min",
+  "HOURS_MINS_SHORT": "{0}u{1}",
+  "MORNING": "Voormiddag",
+  "AFTERNOON": "Namiddag"
 }

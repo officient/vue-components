@@ -1,24 +1,26 @@
+import Vue from 'vue'
+
 export function minutesToHoursMinutes (minutes) {
 	if (minutes >= 60) {
 		const hours = Math.floor(minutes / 60)
-		if (minutes % 60 > 0) return `${hours}h${Math.round(minutes % 60)}min`
-		else return `${hours}h`
+		if (minutes % 60 > 0) return Vue.t('HOURS_MINS', [hours, Math.round(minutes % 60)])
+		else return Vue.t('HOURS_SHORT', [hours])
 	} else if (minutes > 0) {
-		return `${minutes}min`
+		return Vue.t('MINS_SHORT', [minutes])
 	} else {
-		return '0h'
+		return Vue.t('HOURS_SHORT', [0])
 	}
 }
 
 export function enagementToHoursMinutes (minutes) {
   if (minutes >= 60) {
     const hours = Math.floor(minutes / 60)
-    if (minutes % 60 > 0) return `${hours}h${Math.round(minutes % 60)}`
-    else return `${hours}h`
+    if (minutes % 60 > 0) return Vue.t('HOURS_MINS_SHORT', [hours, Math.round(minutes % 60)])
+    else return Vue.t('HOURS_SHORT', [hours])
   } else if (minutes > 0) {
-    return `${minutes}min`
+    return Vue.t('MINS_SHORT', [minutes])
   } else {
-    return '0h'
+    return Vue.t('HOURS_SHORT', [0])
   }
 }
 
@@ -27,9 +29,9 @@ export function daysOffPartOfDay ({ start_minutes, duration_minutes }) {
 
   if (duration_minutes <= (5 * 60)) {
     if (middle < (12 * 60)) {
-      return 'morning'
+      return Vue.t('MORNING').toLowerCase()
     } else {
-      return 'afternoon'
+      return Vue.t('AFTERNOON').toLowerCase()
     }
   }
 }
