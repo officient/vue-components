@@ -15,7 +15,6 @@
 
 <script>
 import '../../scss/Tooltip.scss'
-import { daysOffPartOfDay } from '../../utils/filters'
 
 export default {
   name: 'CalendarTooltipitem',
@@ -29,7 +28,6 @@ export default {
       default: ''
     }
   },
-  filters: { daysOffPartOfDay },
   computed: {
     itemStyles () {
       return {

@@ -27,7 +27,7 @@ describe('CalendarTooltipContent.vue', () => {
     } })
 
     expect(wrapper.find('.calendar-tooltip-title').text()).toBe('Working time')
-    expect(wrapper.find('.calendar-tooltip-content').text()).toBe('1h')
+    expect(wrapper.find('.calendar-tooltip-content').text()).toBe('60')
   })
 
   it('renders official holiday', () => {

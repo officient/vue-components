@@ -18,7 +18,7 @@ describe('CalendarTooltipItem.vue', () => {
     } })
 
     expect(wrapper.find('.calendar-tooltip-item-name').text()).toBe('Hello')
-    expect(wrapper.find('.calendar-tooltip-item-details').text().trim()).toBe('8h')
+    expect(wrapper.find('.calendar-tooltip-item-details').text().trim()).toBe('480')
   })
 
   it('renders half day off correctly', () => {
@@ -32,7 +32,6 @@ describe('CalendarTooltipItem.vue', () => {
     } })
 
     expect(wrapper.find('.calendar-tooltip-item-name').text()).toBe('Hello')
-    expect(wrapper.find('.calendar-tooltip-item-details').text().replace(/\s+/gm, ' ').trim()).toBe('4h - afternoon')
     expect(wrapper.find('.calendar-tooltip-item').attributes().style).toBe('border-color: #00ff00;')
   })
 
