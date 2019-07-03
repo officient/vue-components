@@ -14,12 +14,15 @@ import PortalVue from 'portal-vue'
 import VueI18n from 'vue-i18n'
 import i18n from '../i18n'
 import VueLocal from './plugins/local/_plugin'
+import Filters from '../../src/utils/filters'
 
 Vue.use(PortalVue)
 
 Vue.use(VueI18n)
 Vue.use(i18n)
 Vue.use(VueLocal)
+
+Filters(Vue)
 
 Vue.use(plugin)
 initRouter(routes)
