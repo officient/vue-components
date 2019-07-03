@@ -23,7 +23,7 @@
 
 <script>
 import DaysOffTooltip from './DaysOffTooltip'
-import { floatable, minutesToHoursMinutes } from '../../utils/filters'
+import { floatable } from '../../utils/filters'
 
 export default {
   name: 'DaysOffTime',
