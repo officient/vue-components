@@ -20,6 +20,7 @@
 <script>
 import BudgetUsage from './BudgetUsage'
 import DaysOffTime from './DaysOffTime'
+import '../../scss/budgetsection.scss'
 
 export default {
   name: 'DaysOffUsageRow',

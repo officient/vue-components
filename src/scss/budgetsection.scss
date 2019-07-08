@@ -1,0 +1,187 @@
+.budget-section {
+    @media only screen and (max-width: 600px) {
+      .table.list.boxxed {
+        .m-block {
+          position: relative;
+        }
+        .budget-section-name {
+          width: 100%;
+          padding-left: 0;
+          margin-bottom: 5px;
+        }
+        .budget-section-progress {
+          width: 100%;
+          .progress-budget,
+          .usage-progress .progress {
+            height: 10px;
+            line-height: 10px;
+            border-radius: 10px;
+          }
+          .usage-progress {
+            .bar {
+              border-radius: 10px;
+            }
+          }
+          .progress-budget {
+            .bar:first-child {
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 10px;
+            }
+            .bar:last-child {
+              border-top-right-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+          }
+        }
+        .budget-section-time {
+          pointer-events: none;
+          position: absolute;
+          text-align: right;
+          width: auto;
+          top: 0;
+          display: inline-block;
+          z-index: 0;
+          right: 0;
+          margin: 20px;
+        }
+      }
+  
+      &.budget-section--with-action {
+        .table.list.boxxed {
+          .budget-section-progress {
+            width: calc(100% - 40px);
+          }
+          .budget-section-action {
+            position: absolute;
+            right: 0;
+            width: auto;
+            display: inline-block;
+            margin: 20px;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  
+    @media only screen and (max-width: 400px) {
+      .table.list.boxxed {
+        .budget-section-time {
+          margin: auto;
+          margin-top: 5px;
+          position: static;
+        }
+        .budget-section-progress {
+          width: 100% !important;
+        }
+        .budget-section-action {
+          top: 0;
+          bottom: auto !important;
+        }
+      }
+    }
+  }
+  
+  .budget-section--dropdown {
+    user-select: none;
+    @media only screen and (min-width: 601px) {
+      .table.list.boxxed {
+        table-layout: fixed;
+        .tr.m-block {
+          .td.budget-section-name {
+            width: 40%;
+            .item {
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          .td.budget-section-progress {
+            width: 30%;
+          }
+          .td.budget-section-time {
+            width: 30%;
+          }
+        }
+      }
+    }
+  
+    @media only screen and (max-width: 600px) {
+      .table.list.boxxed {
+        .m-block {
+          position: relative;
+        }
+        .budget-section-name {
+          width: 100%;
+          padding-left: 0;
+          margin-bottom: 5px;
+        }
+        .budget-section-progress {
+          width: 100%;
+          .progress-budget,
+          .usage-progress .progress {
+            height: 10px;
+            line-height: 10px;
+            border-radius: 10px;
+          }
+          .usage-progress {
+            .bar {
+              border-radius: 10px;
+            }
+          }
+          .progress-budget {
+            .bar:first-child {
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 10px;
+            }
+            .bar:last-child {
+              border-top-right-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+          }
+        }
+        .budget-section-time {
+          pointer-events: none;
+          position: absolute;
+          text-align: right;
+          width: auto;
+          top: 0;
+          display: inline-block;
+          z-index: 0;
+          right: 0;
+          margin: 20px;
+        }
+      }
+  
+      &.budget-section--with-action {
+        .table.list.boxxed {
+          .budget-section-progress {
+            width: calc(100% - 40px);
+          }
+          .budget-section-action {
+            position: absolute;
+            right: 0;
+            width: auto;
+            display: inline-block;
+            margin: 20px;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  
+    @media only screen and (max-width: 400px) {
+      .table.list.boxxed {
+        .budget-section-time {
+          margin: auto;
+          margin-top: 5px;
+          position: static;
+        }
+        .budget-section-progress {
+          width: 100% !important;
+        }
+        .budget-section-action {
+          top: 0;
+          bottom: auto !important;
+        }
+      }
+    }
+  }

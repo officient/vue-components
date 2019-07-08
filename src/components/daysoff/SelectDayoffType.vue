@@ -35,6 +35,9 @@ import profile from 'utils/profile'
 import BudgetUsageDropdownItem from './BudgetUsageDropdownItem'
 import DaysOffUsageRow from './DaysOffUsageRow'
 import { sickdayType, educationType } from '../../utils/dayoffTypes'
+import '../../scss/Calendar.scss'
+import '../../scss/budgetsection.scss'
+
 export default {
   name: 'SelectDayoffType',
   components: { Dropdown, BudgetUsageDropdownItem, DaysOffUsageRow },

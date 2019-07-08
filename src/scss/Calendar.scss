@@ -1,0 +1,25 @@
+.calendar {
+    .calendar-dayofftypes {
+      margin-left: 15px;
+  
+      .dropdown.full {
+        border-left: 0;
+      }
+  
+      .dropdown.full > .target {
+        padding: 0;
+      }
+    }
+}
+
+.select-day-off-type--large-screen {
+    @media screen and (max-width: 400px) {
+        display: none;
+    }
+}
+
+.select-day-off-type--small-screen {
+    @media screen and (min-width: 401px) {
+        display: none;
+    }
+}
