@@ -29,12 +29,9 @@
 </template>
 
 <script>
-import { listBudgetUsage } from 'api/requests'
 import Dropdown from '../Dropdown/Dropdown'
-import profile from 'utils/profile'
 import BudgetUsageDropdownItem from './BudgetUsageDropdownItem'
 import DaysOffUsageRow from './DaysOffUsageRow'
-import { sickdayType, educationType } from '../../utils/dayoffTypes'
 import '../../scss/Calendar.scss'
 import '../../scss/budgetsection.scss'
 
@@ -53,11 +50,10 @@ export default {
     textMobile: {
       type: String,
       required: false
-    }
-  },
-  data () {
-    return {
-      budgetTypes: []
+    },
+    budgetTypes: {
+      type: Array,
+      required: true
     }
   },
   computed: {
@@ -74,33 +70,10 @@ export default {
   },
   watch: {
     year () {
-      this.getData()
+      this.$emit('getData')
     }
   },
-  mounted () {
-    this.getData()
-  },
   methods: {
-    getData () {
-      listBudgetUsage({ year: this.year }).then(res => {
-        this.budgetTypes = res.body.budgets.custom_types
-        profile.getProfile().then(res => {
-          if (!res.disable_days_off_education_type) {
-            this.budgetTypes.push(educationType)
-          }
-        })
-        this.budgetTypes.push(sickdayType)
-        const { value, budgetTypes } = this
-        if (value) { // on refresh, find same budget
-          for (const i of budgetTypes) {
-            if (i.type === value.type && i.type_id === value.type_id) {
-              this.$emit('input', i)
-              return
-            }
-          }
-        }
-      })
-    },
     selectItem (item) {
       this.$emit('input', item)
     },
