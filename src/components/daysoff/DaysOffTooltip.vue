@@ -1,5 +1,5 @@
 <template>
-<tooltip class="BudgetTooltip" :color="`#${item.color}`">
+<tooltip class="BudgetTooltip">
   <template v-if="this.item.limitation === 'limit_in_half_days'">
     <table>
       <tbody>
