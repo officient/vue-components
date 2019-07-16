@@ -17,7 +17,6 @@
 
 <script>
 import avatarColors from '../utils/avatar-colors'
-import '../scss/AvatarImage.scss'
 
 const errorsList = []
 export default {

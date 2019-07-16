@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import '../scss/InputDate.scss'
 import Pikaday from 'pikaday'
 import moment from 'moment'
 const format = 'DD/MM/YYYY'

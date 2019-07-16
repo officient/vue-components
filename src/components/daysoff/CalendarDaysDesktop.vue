@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import '../../scss/Tooltip.scss'
 import CalendarDesktopDay from './CalendarDesktopDay'
 
 export default {

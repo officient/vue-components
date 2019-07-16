@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import '../scss/loading.scss'
 
 export default {
   name: 'Loading'

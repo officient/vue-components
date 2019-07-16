@@ -27,7 +27,6 @@
 
 <script>
 import controller from './controller'
-import '../../scss/toast.scss'
 
 export default {
   name: 'ToastCenter',

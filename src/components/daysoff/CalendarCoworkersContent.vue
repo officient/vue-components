@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import '../../scss/Tooltip.scss'
 import Tooltip from '../Tooltip'
 import CalendarTooltipItem from './CalendarTooltipItem'
 
