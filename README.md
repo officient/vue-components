@@ -29,7 +29,8 @@ To allow it to be used externally, you need to also add it to the `/lib` folder.
 
 ### SCSS
 
-Import the CSS in your Vue file in the script section.
+Don't import SCSS files into your Vue files. Import any new files into `src/scss/styles.scss`.
+The `lib/scss/style.scss` file should be imported directly in the stylesheets of projects that use the vue-components. This ensures that SCSS files do not get chunked during build.
 
 ### Release
 

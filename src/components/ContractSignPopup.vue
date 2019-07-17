@@ -50,7 +50,6 @@ import SignaturePad from 'signature_pad'
 import { mixin as clickaway } from 'vue-clickaway'
 import { signContract } from 'api/contracts'
 import profile from 'utils/profile'
-import '../scss/SignPage.scss'
 
 export default {
   name: 'contract-sign-popup',

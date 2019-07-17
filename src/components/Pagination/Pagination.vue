@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import '../../scss/pagination.scss'
 
 export default {
   name: 'Pagination',

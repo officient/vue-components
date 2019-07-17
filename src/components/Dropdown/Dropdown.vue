@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import './../../scss/dropdown.scss'
 import { mixin as clickaway } from 'vue-clickaway'
 import { getCoordsOfElem } from './../../../lib/utils/dom.js'
 

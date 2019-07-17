@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import '../scss/InputSwitch.scss'
 
 export default {
   name: 'InputSwitch',

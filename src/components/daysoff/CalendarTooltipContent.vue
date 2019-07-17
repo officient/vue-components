@@ -45,7 +45,6 @@
 </template>
 
 <script>
-import '../../scss/Tooltip.scss'
 import CalendarTooltipItem from './CalendarTooltipItem'
 import { minutesToHoursMinutes } from '../../utils/filters'
 
