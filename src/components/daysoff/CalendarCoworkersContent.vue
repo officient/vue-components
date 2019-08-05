@@ -15,7 +15,7 @@
           </div>
         </div>
       </tooltip>
-      <span>{{ $t('PLUS_MORE', moreList.length) }}  </span>
+      <span>{{ $t('PLUS_MORE', [ moreList.length ]) }}  </span>
     </div>
   </div>
 </template>
