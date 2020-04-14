@@ -41,6 +41,13 @@
         <calendar-tooltip-item v-for="item in pendingDaysOffSlots" :key="item.id" :item="item" />
       </div>
     </div>
+
+    <div v-if="pendingRemovalDaysOffSlots.length > 0" class="calendar-tooltip-row">
+      <div class="calendar-tooltip-title">{{ $t('DAYS_OFF_PENDING_REMOVAL') }}</div>
+      <div class="calendar-tooltip-content">
+        <calendar-tooltip-item v-for="item in pendingRemovalDaysOffSlots" :key="item.id" :item="item" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -77,26 +84,32 @@ export default {
     pendingDaysOffSlots () {
       return this.slots.filter(x => x.classBools.pending)
     },
+    pendingRemovalDaysOffSlots () {
+      return this.slots.filter(x => x.classBools.pending_deletion)
+    },
     activitySlots () {
-      const { slots, pendingDaysOffSlots } = this
+      const { slots, pendingDaysOffSlots, pendingRemovalDaysOffSlots } = this
       return slots.filter(x => {
         if (pendingDaysOffSlots.indexOf(x) > -1) return false
+        if (pendingRemovalDaysOffSlots.indexOf(x) > -1) return false
         if (x.interpretation === 'activity') return true
       })
     },
     daysOffSlots () {
-      const { slots, activitySlots, companyDaysoffSlots, pendingDaysOffSlots } = this
+      const { slots, activitySlots, companyDaysoffSlots, pendingDaysOffSlots, pendingRemovalDaysOffSlots } = this
       return slots.filter(x => {
         if (activitySlots.indexOf(x) > -1) return false
         if (companyDaysoffSlots.indexOf(x) > -1) return false
         if (pendingDaysOffSlots.indexOf(x) > -1) return false
+        if (pendingRemovalDaysOffSlots.indexOf(x) > -1) return false
         return true
       })
     },
     workTime () {
       const timeOffTotal = this.daysOffSlots.reduce((timeOffMinutes, slot) => timeOffMinutes + slot.duration_minutes, 0)
+      const pendingRemovalTimeOffTotal = this.pendingRemovalDaysOffSlots.reduce((timeOffMinutes, slot) => timeOffMinutes + slot.duration_minutes, 0)
       const workTimeSchedule = this.weeklySchedule[this.dateStr] || 0
-      const workTime = workTimeSchedule - timeOffTotal
+      const workTime = workTimeSchedule - timeOffTotal - pendingRemovalTimeOffTotal
       return Math.max(0, workTime)
     },
     emptyDay () {
