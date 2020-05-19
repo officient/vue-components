@@ -16,6 +16,7 @@
 </template>
 
 <script>
+/* eslint-disable import/no-unresolved */
 import { mixin as clickaway } from 'vue-clickaway'
 import { freezeBackground, unfreezeBackground } from '../utils/modals'
 

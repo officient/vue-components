@@ -7,6 +7,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/return-in-computed-property */
 import DaysOffTooltip from './DaysOffTooltip'
 
 export default {
