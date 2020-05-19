@@ -12,8 +12,8 @@ module.exports = {
   ],
   settings: {
     'import/resolver': {
-      webpack: {
-        config: 'dev/server/config/webpack.hmr.config.js'
+      node: {
+        extensions: [".js", ".vue"]
       }
     }
   },

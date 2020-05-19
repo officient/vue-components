@@ -22,6 +22,7 @@
 </template>
 
 <script>
+/* eslint-disable import/no-unresolved */
 import { mixin as clickaway } from 'vue-clickaway'
 import { getCoordsOfElem } from './../../../lib/utils/dom.js'
 

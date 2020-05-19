@@ -98,6 +98,7 @@
   </div>
 </template>
 <script>
+/* eslint-disable vue/return-in-computed-property */
 import InputText from './input/InputText.vue'
 import InputSelectField from './input/InputSelectField.vue'
 

@@ -14,8 +14,9 @@
 </template>
 
 <script>
-import CalendarTooltipItem from 'officient-vue-components/lib/components/daysoff/CalendarTooltipItem'
-import CalendarTooltipContent from 'officient-vue-components/lib/components/daysoff/CalendarTooltipContent'
+/* eslint-disable vue/no-unused-components */
+import CalendarTooltipItem from './CalendarTooltipItem'
+import CalendarTooltipContent from './CalendarTooltipContent'
 
 export default {
   name: 'CalendarTooltipContentMobile',

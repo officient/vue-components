@@ -4,12 +4,8 @@
   "description": "Shared Vue components for Officient",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --hot --config dev/server/config/webpack.hmr.config.js",
-    "unit": "jest",
-    "test": "npm run lint && jest",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint -c .eslintrc.js --ext .js,.vue components server i18n",
-    "clean": "rimraf node_modules/.cache html/js/main*.js html/css/style*css html/index*.html"
+    "test": "npm run lint",
+    "lint": "eslint -c .eslintrc.js --ext .js,.vue src"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +15,12 @@
   },
   "dependencies": {
     "pikaday": "1.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.0.0",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-vue": "6.2.2"
   }
 }

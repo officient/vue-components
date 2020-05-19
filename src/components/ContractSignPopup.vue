@@ -46,6 +46,7 @@
 </template>
 
 <script>
+/* eslint-disable import/no-unresolved */
 import SignaturePad from 'signature_pad'
 import { mixin as clickaway } from 'vue-clickaway'
 import { signContract } from 'api/contracts'

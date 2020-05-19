@@ -21,6 +21,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import Tooltip from '../Tooltip'
 import CalendarTooltipItem from './CalendarTooltipItem'
 

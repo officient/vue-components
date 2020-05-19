@@ -19,6 +19,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/return-in-computed-property */
 import moment from 'moment'
 import CalendarTooltipContentMobile from './CalendarTooltipContentMobile'
 
