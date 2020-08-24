@@ -105,9 +105,10 @@ export default {
       })
     },
     workTime () {
-      const timeOffTotal = this.daysOffSlots.reduce((timeOffMinutes, slot) => timeOffMinutes + slot.duration_minutes, 0)
+      const timeOffTotal = this.daysOffSlots.reduce((sum, slot) => sum + slot.duration_minutes, 0)
+      const workingTimeSlotsTotal = this.workingTimeSlots.reduce((sum, slot) => sum + slot.duration_minutes, 0)
       const workTimeSchedule = this.weeklySchedule[this.dateStr] || 0
-      const workTime = workTimeSchedule - timeOffTotal
+      const workTime = workTimeSchedule - timeOffTotal - workingTimeSlotsTotal
       return Math.max(0, workTime)
     },
     emptyDay () {
