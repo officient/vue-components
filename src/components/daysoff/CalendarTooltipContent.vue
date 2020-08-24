@@ -91,7 +91,7 @@ export default {
       const { slots, pendingDaysOffSlots } = this
       return slots.filter(x => {
         if (pendingDaysOffSlots.indexOf(x) > -1) return false
-        if (x.is_work_type) return true
+        if (x.is_work_type && x.interpretation === 'time_off') return true
       })
     },
     daysOffSlots () {
