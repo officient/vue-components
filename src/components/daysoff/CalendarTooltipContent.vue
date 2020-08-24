@@ -39,7 +39,7 @@
     </div>
 
     <div v-if="pendingDaysOffSlots.length > 0" class="calendar-tooltip-row">
-      <div class="calendar-tooltip-title">{{ $t('DAYS_OFF_PENDING_APPROVAL') }}</div>
+      <div class="calendar-tooltip-title">{{ $t('PENDING_APPROVAL') }}</div>
       <div class="calendar-tooltip-content">
         <calendar-tooltip-item v-for="item in pendingDaysOffSlots" :key="item.id" :item="item" />
       </div>
