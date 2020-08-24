@@ -9,9 +9,12 @@
       <div v-else class="calendar-tooltip-content">{{ $t('ZERO_SCHEDULE_DAY') }}</div>
     </div>
 
-    <div class="calendar-tooltip-row" v-if="workTime > 0 && companyDaysoffSlots.length === 0">
+    <div class="calendar-tooltip-row" v-if="(workTime > 0 && companyDaysoffSlots.length === 0) || workingTimeSlots.length > 0">
       <div class="calendar-tooltip-title">{{ $t('WORKING_TIME') }}</div>
-      <div class="calendar-tooltip-content">{{  workTime | minutesToHoursMinutes }}</div>
+      <div class="calendar-tooltip-content">
+        <div v-if="workTime > 0 && companyDaysoffSlots.length === 0">{{  workTime | minutesToHoursMinutes }}</div>
+        <calendar-tooltip-item v-for="item in workingTimeSlots" :key="item.id" :item="item" />
+      </div>
     </div>
 
     <div v-if="companyDaysoffSlots.length > 0" class="calendar-tooltip-row">
@@ -36,7 +39,7 @@
     </div>
 
     <div v-if="pendingDaysOffSlots.length > 0" class="calendar-tooltip-row">
-      <div class="calendar-tooltip-title">{{ $t('DAYS_OFF_PENDING_APPROVAL') }}</div>
+      <div class="calendar-tooltip-title">{{ $t('PENDING_APPROVAL') }}</div>
       <div class="calendar-tooltip-content">
         <calendar-tooltip-item v-for="item in pendingDaysOffSlots" :key="item.id" :item="item" />
       </div>
@@ -84,10 +87,18 @@ export default {
         if (x.interpretation === 'activity') return true
       })
     },
+    workingTimeSlots() {
+      const { slots, pendingDaysOffSlots } = this
+      return slots.filter(x => {
+        if (pendingDaysOffSlots.indexOf(x) > -1) return false
+        if (x.is_work_type && x.interpretation === 'time_off') return true
+      })
+    },
     daysOffSlots () {
-      const { slots, activitySlots, companyDaysoffSlots, pendingDaysOffSlots } = this
+      const { slots, activitySlots, workingTimeSlots, companyDaysoffSlots, pendingDaysOffSlots } = this
       return slots.filter(x => {
         if (activitySlots.indexOf(x) > -1) return false
+        if (workingTimeSlots.indexOf(x) > -1) return false
         if (companyDaysoffSlots.indexOf(x) > -1) return false
         if (pendingDaysOffSlots.indexOf(x) > -1) return false
         return true
