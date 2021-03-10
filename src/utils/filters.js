@@ -25,7 +25,7 @@ export function enagementToHoursMinutes (minutes) {
 export function daysOffPartOfDay ({ start_minutes, duration_minutes }) {
   const middle = start_minutes + (duration_minutes / 2)
 
-  if (duration_minutes <= (5 * 60)) {
+  if (duration_minutes < (5 * 60)) {
     if (middle < (12 * 60)) {
       return 'morning'
     } else {
