@@ -3,7 +3,7 @@
     <span v-if="item.name" class="calendar-tooltip-item-name">{{ $t(item.name) }}</span>
     <span v-else-if="placeholder" class="calendar-tooltip-item-name">{{ $t(placeholder) }}</span>
 
-    <div v-for="item in contract_items" :key="item">
+    <div v-for="item in contract_items" :key="item.id">
       <div v-if="item.duration_minutes > 0" class="calendar-tooltip-item-details">
         <span>{{ item.duration_minutes | enagementToHoursMinutes }}</span>
         <span v-if="item.contract_name">
@@ -51,6 +51,7 @@ export default {
       for (const [index, [contract_uid, duration]] of Object.entries(Object.entries(metadata))) {
         const item = { ...this.item }
         const contract_number = parseInt(index) + 1
+        item.id = `${item.id}${contract_number}` // need some key for v-for
         item.contract_name = `${this.$t('CONTRACT')} ${contract_number}`
         item.duration_minutes = duration
         enriched_items.push(item)
