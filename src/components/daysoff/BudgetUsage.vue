@@ -53,7 +53,7 @@ export default {
         return ((parseFloat(this.item.days_approved) / this.item.max_yearly_amount_days) * 100)
       } else if (this.limit === 'limit_in_minutes' || this.limit === 'limit_by_overtime') {
         if (!this.item.max_yearly_amount_minutes) return 0
-        return ((this.item.minutes_approved / this.item.max_yearly_amount_minutes) * 100)
+        return (((this.item.minutes_approved + (this.item.expired_minutes || 0)) / this.item.max_yearly_amount_minutes) * 100)
       }
     },
     getPending () {

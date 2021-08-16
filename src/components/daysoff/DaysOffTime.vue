@@ -39,7 +39,7 @@ export default {
       return total - used
     },
     getMinutesUsed () {
-      return (parseInt(this.item.minutes_approved) + parseInt(this.item.minutes_not_approved))
+      return (parseInt(this.item.minutes_approved) + parseInt(this.item.minutes_not_approved) + parseInt(this.item.expired_minutes || 0))
     },
     getMinutesLeft () {
       const used = this.getMinutesUsed
