@@ -1,6 +1,6 @@
 <template>
 	<span class="progress-budget" :class="{ full: isMaxed, dropdown: dropdown }">
-	  <days-off-tooltip :item="item"></days-off-tooltip>
+	  <days-off-tooltip v-if="!hideTooltip" :item="item"></days-off-tooltip>
 	  <span class="bar approved" :style="approvedStyles" v-if="approvedWidth != 0"></span>
 	  <span class="bar pending" :style="pendingStyles" v-if="getPending != 0"></span>
 	</span>
@@ -13,7 +13,7 @@ import DaysOffTooltip from './DaysOffTooltip'
 export default {
   name: 'BudgetUsage',
   components: { DaysOffTooltip },
-  props: ['item', 'dropdown'],
+  props: ['item', 'dropdown', 'hideTooltip'],
   computed: {
     approvedWidth () {
       return 100 - (this.getApproved + this.getPending)
