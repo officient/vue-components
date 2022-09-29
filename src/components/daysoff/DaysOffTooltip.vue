@@ -68,7 +68,7 @@ export default {
   props: ['item'],
   computed: {
     showTooltipForLimitsInMinutes(){
-      if(this.item.limitation !== 'leave_accrual') {
+      if(this.item.limitation !== 'leave_accrual'){
         return true
       }
 
