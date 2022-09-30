@@ -37,7 +37,7 @@ export default {
     },
 
     isMaxed () {
-      if (this.limit === 'unlimited') {
+      if (this.limit === 'unlimited' || this.limit === 'leave_accrual') {
         return false
       } else if (this.limit === 'limit_in_days' || this.limit === 'limit_in_half_days') {
         return parseFloat(this.item.max_yearly_amount_days) <= (parseFloat(this.item.days_approved) + parseFloat(this.item.days_not_approved))
@@ -46,7 +46,7 @@ export default {
       }
     },
     getApproved () {
-      if (this.limit === 'unlimited') {
+      if (this.limit === 'unlimited' || this.limit === 'leave_accrual') {
         return 0
       } else if (this.limit === 'limit_in_days' || this.limit === 'limit_in_half_days') {
         if (!this.item.max_yearly_amount_days) return 0
@@ -57,7 +57,7 @@ export default {
       }
     },
     getPending () {
-      if (this.limit === 'unlimited') {
+      if (this.limit === 'unlimited' || this.limit === 'leave_accrual') {
         return 0
       } else if (this.limit === 'limit_in_days' || this.limit === 'limit_in_half_days') {
         if (!this.item.max_yearly_amount_days) return 0

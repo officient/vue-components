@@ -36,7 +36,7 @@
       </tbody>
     </table>
   </template>
-  <template v-else>
+  <template v-else-if="showTooltipForLimitsInMinutes">
     <table>
       <tbody>
         <tr v-if="item.minutes_approved > 0">
@@ -47,7 +47,7 @@
           <th>{{ $t('PENDING') }}</th>
           <td>{{item.minutes_not_approved | enagementToHoursMinutes}}</td>
         </tr>
-        <tr>
+        <tr v-if="item.limitation !== 'leave_accrual'">
           <th>{{ $t('LIMIT') }}</th>
           <td v-if="item.limitation === 'unlimited'">{{ $t('UNLIMITED') }}</td>
           <td v-else>{{item.max_yearly_amount_minutes | enagementToHoursMinutes}}</td>
@@ -66,6 +66,23 @@ export default {
   name: 'DaysOffTooltip',
   components: { Tooltip },
   props: ['item'],
+  computed: {
+    showTooltipForLimitsInMinutes(){
+      if(this.item.limitation !== 'leave_accrual'){
+        return true
+      }
+
+      if(this.item.minutes_approved > 0){
+        return true
+      }
+      
+      if(this.item.minutes_not_approved > 0){
+        return true
+      }
+
+      return false
+    },
+  },
   methods: { floatable: floatable }
 }
 </script>
