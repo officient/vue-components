@@ -24,6 +24,12 @@
     <span v-if="labelRight" class="input-switch__label input-switch__label--right" >
       <span :aria-hidden="!checked">{{ labelRight }}</span>
     </span>
+    <span v-if="labelRightOn && checked" class="input-switch__label input-switch__label--right" >
+      <span>{{ labelRightOn }}</span>
+    </span>
+    <span v-if="labelRightOff && !checked" class="input-switch__label input-switch__label--right" >
+      <span>{{ labelRightOff }}</span>
+    </span>
   </label>
 </template>
 
@@ -45,6 +51,8 @@ export default {
       default: ''
     },
     labelRight: String,
+    labelRightOn: String,
+    labelRightOff: String,
     labelLeft: String
   },
   computed: {
