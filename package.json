@@ -10,17 +10,17 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "12",
-    "npm": "6.4.1"
+    "node": "^16",
+    "npm": "^8"
   },
   "dependencies": {
     "pikaday": "1.5.1"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
-    "babel-eslint": "10.1.0",
-    "eslint": "7.0.0",
-    "eslint-plugin-import": "2.20.2",
-    "eslint-plugin-vue": "6.2.2"
+    "@babel/core": "^7",
+    "@babel/eslint-parser": "^7",
+    "eslint": "^7",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-vue": "^7"
   }
 }
