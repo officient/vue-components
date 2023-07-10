@@ -60,12 +60,13 @@
 
 <script>
 import Tooltip from '../Tooltip'
-import { floatable } from '../../utils/filters'
+import { enagementToHoursMinutes, floatable } from '../../utils/filters'
 
 export default {
   name: 'DaysOffTooltip',
   components: { Tooltip },
   props: ['item'],
+  filters: { enagementToHoursMinutes },
   computed: {
     showTooltipForLimitsInMinutes(){
       if(this.item.limitation !== 'leave_accrual'){
