@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <div v-for="(item, i) in limitedList" :key="i" class="box-day box-day__coworker">
-      <span><b>{{ item.name.split(' ')[0] }}</b>: {{ item.duration_minutes | enagementToHoursMinutes }}</span>
+      <span><b>{{ item.name.split(' ')[0] }}</b>: {{ item.duration_minutes | engagementToHoursMinutes }}</span>
     </div>
 
     <div v-if="moreList.length > 0" class="box-day box-day__more">
@@ -10,7 +10,7 @@
           <div class="calendar-tooltip-title">{{ $t('COWORKERS') }}</div>
           <div class="calendar-tooltip-content">
             <div v-for="item in moreList" class="calendar-tooltip-item">
-              <span class="calendar-tooltip-item-name">{{ item.name.split(' ')[0] }}</span>: {{ item.duration_minutes | enagementToHoursMinutes }}
+              <span class="calendar-tooltip-item-name">{{ item.name.split(' ')[0] }}</span>: {{ item.duration_minutes | engagementToHoursMinutes }}
             </div>
           </div>
         </div>

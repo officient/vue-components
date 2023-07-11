@@ -4,7 +4,7 @@
     <span v-else-if="placeholder" class="calendar-tooltip-item-name">{{ $t(placeholder) }}</span>
 
     <div v-if="item.duration_minutes > 0" class="calendar-tooltip-item-details">
-      <span>{{ item.duration_minutes | enagementToHoursMinutes }}</span>
+      <span>{{ item.duration_minutes | engagementToHoursMinutes }}</span>
       <span v-if="item.duration_minutes > 0 && item.duration_minutes < 5 * 60">
         <!-- If half a day. Show which part of day -->
         - {{ item | daysOffPartOfDay }}
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { enagementToHoursMinutes, daysOffPartOfDay } from '../../utils/filters'
+import { engagementToHoursMinutes, daysOffPartOfDay } from '../../utils/filters'
 
 export default {
   name: 'CalendarTooltipitem',
@@ -28,7 +28,7 @@ export default {
       default: ''
     }
   },
-  filters: { enagementToHoursMinutes, daysOffPartOfDay },
+  filters: { engagementToHoursMinutes, daysOffPartOfDay },
   computed: {
     itemStyles () {
       return {

@@ -10,7 +10,7 @@ export function minutesToHoursMinutes (minutes) {
 	}
 }
 
-export function enagementToHoursMinutes (minutes) {
+export function engagementToHoursMinutes (minutes) {
   if (minutes >= 60) {
     const hours = Math.floor(minutes / 60)
     if (minutes % 60 > 0) return `${hours}h${Math.round(minutes % 60)}`
@@ -51,6 +51,6 @@ export function floatable (number, decimals) {
 
 export default (Vue) => {
   Vue.filter('minutesToHoursMinutes', minutesToHoursMinutes)
-  Vue.filter('enagementToHoursMinutes', enagementToHoursMinutes)
+  Vue.filter('engagementToHoursMinutes', engagementToHoursMinutes)
   Vue.filter('floatable', floatable)
 }

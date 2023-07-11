@@ -41,16 +41,16 @@
       <tbody>
         <tr v-if="item.minutes_approved > 0">
           <th>{{ $t('APPROVED') }}</th>
-          <td>{{item.minutes_approved | enagementToHoursMinutes}}</td>
+          <td>{{item.minutes_approved | engagementToHoursMinutes}}</td>
         </tr>
         <tr v-if="item.minutes_not_approved > 0">
           <th>{{ $t('PENDING') }}</th>
-          <td>{{item.minutes_not_approved | enagementToHoursMinutes}}</td>
+          <td>{{item.minutes_not_approved | engagementToHoursMinutes}}</td>
         </tr>
         <tr v-if="item.limitation !== 'leave_accrual'">
           <th>{{ $t('LIMIT') }}</th>
           <td v-if="item.limitation === 'unlimited'">{{ $t('UNLIMITED') }}</td>
-          <td v-else>{{item.max_yearly_amount_minutes | enagementToHoursMinutes}}</td>
+          <td v-else>{{item.max_yearly_amount_minutes | engagementToHoursMinutes}}</td>
         </tr>
       </tbody>
     </table>
